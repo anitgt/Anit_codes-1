@@ -27,7 +27,9 @@ cart.forEach((cartItem) => {
   const dateString = deliveryDate.format('dddd, MMMM D');
 
   cartSummaryHTML += `
-    <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
+    <div class="cart-item-container
+    ja-cart-cart-item-container
+    js-cart-item-container-${matchingProduct.id}">
       <div class="delivery-date">Delivery date: ${dateString}</div>
       <div class="cart-item-details-grid">
         <img class="product-image" src="${matchingProduct.image}">
