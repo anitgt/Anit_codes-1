@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+<body>
+    <h1>Forms Demo</h1>
+
+    <form action="/tacos">
+        <p>
+            <label for="username">Enter a username:</label>
+            <input id="username" type="text" placeholder="Username" name="username">
+        </p>
+        <button>Form button</button>
+        <p>
+            <label for="pass">Enter password:</label>
+            <input id="pass" type="password" placeholder="password" name="passworrd">
+        </p>
+        <p>
+            <label for="color">Select color:</label>
+        <input id="color" type="color" name="color">
+        </p>
+        
+        <p>
+        <label for="num">Enter a Num:</label>
+         <input id="num" min="1" max="1000" type="number" placeholder="Enter a number" name="num">
+        </p>
+        
+        <!----<button type="button">Submit</button> -->
+        <input type="Submit">
+        <hr>
+        <button type="button">Submit</button>
+        <hr>
+    </form>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+
+    <hr>
+    <form action="https://www.youtube.com/results">
+        <input placeholder="Type" name="search_query">
+        <button>Search Yt</button>
+    </form> 
+
+    <h2>More inputs</h2>
+    <form action="/birds">
+        <input type="checkbox" placeholder="Checks" name="agree_birds" id="agree">
+        <label for="agree" >I agree to this</label>
+        <p>
+            <label for="xs">XS</label>
+            <input type="radio" name="size" id="xs" value="xs">
+            <label for="s">S</label>
+            <input type="radio" name="size" id="s" value="s" >
+            <label for="m">M</label>
+            <input type="radio" name="size" id="m" value="m">
+        </p>
+        <button>Submit</button>
+        <p>
+            <label>Please select sum</label>
+            <select name="meal" id="meal">
+                <option value="fish">fisdh</option>
+                <option value="veg" selected>vegeterian</option>
+                <option value="non-veg">non-veg</option>
+                <option value="egg">Egg</option>
+            </select>
+        </p>
+            <button>Submit</button>
+
+            <p>
+                <label for="cheese">Amount of cheese:</label>
+                <input type="range" id="cheese" min="1" max="10" step="7" value="75" name="cheese_level">
+            </p>
+            <button>Submit</button>
+
+        <p>
+        <label for="req">Any special requests</label>
+        <textarea id="req" rows="10" cols="20" name="requests?"></textarea>
+        </p>
+    </form>
+</body>
+</html>
