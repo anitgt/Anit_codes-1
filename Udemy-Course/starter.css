@@ -1,4 +1,4 @@
-body {
+ody {
     background-color: beige;
 }
 
@@ -12,4 +12,16 @@ h1, h2 {
 
 #signUp {
     color: red;
+}
+
+span {
+    color: blue;
+}
+
+.tag {
+    color: green;
+}
+
+span a {
+    color: black;
 }
