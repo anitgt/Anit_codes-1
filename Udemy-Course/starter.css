@@ -7,7 +7,7 @@ button {
 }
 
 h1, h2 {
-    color: darkslateblue;
+    color: darkslateblue !important;
 }
 
 #signUp {
