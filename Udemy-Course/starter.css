@@ -24,6 +24,7 @@ span {
 
 .post a {
     color: black;
+    text-decoration: none;
 }
 
 input + button {
@@ -40,4 +41,29 @@ footer a {
 
 footer > a {
     color: blue;
+}
+
+input[type = "password"] {
+    color: yellow;
+}
+
+section[class = "post"] {
+   
+}
+
+button:hover {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+.post button:active {
+    background-color: #92DCE5;
+}
+
+.post:nth-of-type(2n){
+    background-color:#89608E;
 }
