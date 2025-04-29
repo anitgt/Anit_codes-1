@@ -22,6 +22,22 @@ span {
     color: green;
 }
 
-span a {
+.post a {
     color: black;
+}
+
+input + button {
+    background-color: pink;
+}
+
+h2 + button {
+    color: gray;
+}
+
+footer a {
+    color: red;
+}
+
+footer > a {
+    color: blue;
 }
