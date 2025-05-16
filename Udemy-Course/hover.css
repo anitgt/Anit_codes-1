@@ -1,0 +1,24 @@
+body {
+    background-color: #1f1b29;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+button {
+    background: none;
+    color: #ffa260;
+    border: 2px solid;
+    padding: 12px 16px;
+    font-size: 1em;
+    transition: color 0.5s, border-color 0.5s, box-shadow 0.5s, transform 0.5s;
+}
+
+button:hover {
+    border-color:aquamarine;
+    color: white;
+    box-shadow: 0 0.5px -0.4px #f1ff5c;
+    transform: translateY(-10px);
+    cursor: pointer;
+}
