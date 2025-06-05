@@ -14,7 +14,7 @@ if(ran >= 0.5) {
 }
  */
 
-/* const dayOfWeek = "Friday";
+const dayOfWeek = prompt("enter a day: ")
 
 
 if(dayOfWeek === "Monday") {
@@ -24,9 +24,13 @@ if(dayOfWeek === "Monday") {
 }
  else if (dayOfWeek === "Friday") {
     console.log("Fridays are okay")
-} */
+} else if (dayOfWeek === "Tuesday") {
+    console.log("mehh")
+} else {
+    console.log("hell")
+}
 
-    const age = "67"
+/*     const age = "67"
 
     if(age <=5) {
         console.log("free")
@@ -34,4 +38,5 @@ if(dayOfWeek === "Monday") {
         console.log("child");
     } else if (age >= 18) {
         console.log('adult')
-    }
+    } */
+
