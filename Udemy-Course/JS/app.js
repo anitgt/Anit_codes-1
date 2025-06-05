@@ -1,4 +1,4 @@
-console.log("before conditional");
+/* console.log("before conditional");
 let ran = Math.random();
 
 if(ran < 0.5) {
@@ -12,3 +12,26 @@ if(ran >= 0.5) {
     console.log("your number is greater than 0.5");
     console.log(ran);
 }
+ */
+
+/* const dayOfWeek = "Friday";
+
+
+if(dayOfWeek === "Monday") {
+    console.log("I hate mondays");
+} else if (dayOfWeek === "Saturday") {
+    console.log("i love saturdays")
+}
+ else if (dayOfWeek === "Friday") {
+    console.log("Fridays are okay")
+} */
+
+    const age = "67"
+
+    if(age <=5) {
+        console.log("free")
+    } else if (age <5) {
+        console.log("child");
+    } else if (age >= 18) {
+        console.log('adult')
+    }
