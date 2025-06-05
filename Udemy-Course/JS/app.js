@@ -14,10 +14,10 @@ if(ran >= 0.5) {
 }
  */
 
-const dayOfWeek = prompt("enter a day: ")
+/* const dayOfWeek = prompt("enter a day: ") */
 
 
-if(dayOfWeek === "Monday") {
+/* if(dayOfWeek === "Monday") {
     console.log("I hate mondays");
 } else if (dayOfWeek === "Saturday") {
     console.log("i love saturdays")
@@ -28,7 +28,7 @@ if(dayOfWeek === "Monday") {
     console.log("mehh")
 } else {
     console.log("hell")
-}
+} */
 
 /*     const age = "67"
 
@@ -40,3 +40,15 @@ if(dayOfWeek === "Monday") {
         console.log('adult')
     } */
 
+const password = prompt("please enter a new password");
+
+if(password.length >= 6 ) {
+    if(password.indexOf(' ') === -1) {
+        console.log("Valid password!");
+    } else {
+        console.log("Cannot place spaces")
+}
+}
+else {
+    console.log(" Too short")
+} 
