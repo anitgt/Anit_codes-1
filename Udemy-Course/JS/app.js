@@ -40,7 +40,7 @@ if(ran >= 0.5) {
         console.log('adult')
     } */
 
-const password = prompt("please enter a new password");
+/* const password = prompt("please enter a new password");
 
 if(password.length >= 6 ) {
     if(password.indexOf(' ') === -1) {
@@ -51,4 +51,5 @@ if(password.length >= 6 ) {
 }
 else {
     console.log(" Too short")
-} 
+}  */
+
