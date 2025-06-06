@@ -20,7 +20,7 @@ if(password.length >= 6 && password.indexOf(' ') === -1) {
     console.log("Incorrect passwrod")
 } */
 
-const age = -100;
+/* const age = -100;
 
 
 if(age> 0 && age <5 || age >= 65) {
@@ -31,4 +31,16 @@ if(age> 0 && age <5 || age >= 65) {
     console.log("20$")
 } else {
     console.log("invalid")
+} */
+
+/* const firstname = prompt("Enter Your first name: ");
+
+ if(!firstname) {
+    firstname = prompt("try again");
+} */
+
+const age = 8;
+
+if(!(age >= 0 && age <5 || age>=65)) {
+    console.log("you are not a baby or a senior")
 }
