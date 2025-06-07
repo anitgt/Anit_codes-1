@@ -16,3 +16,12 @@
     console.log(i)
 } */
 
+const animals = ['animalk', 'djasd', 'dadsd', 'dadsad', 'dadadsd', 'dasdasdd', 'd asdioasj dilasuhdjklsahdjoashfdouis','dahujdjkadhksjadha']
+
+/* for(let i = 0; i < animals.length; i++) {
+    console.log(i, animals[i])
+} */
+
+for(let i = animals.length -1; i>=0; i--) {
+    console.log(i, animals[i])
+}
