@@ -57,11 +57,27 @@
 /*     count++ */
 /* } */
 
-const secretCode = "me";
+/* const secretCode = "me"; */
+/*  */
+/* let guess = prompt('Enter the code: '); */
+/*  */
+/* while(guess !== secretCode) { */
+/*     guess = prompt('Enter the code: '); */
+/* } */
+/* console.log("you won!"); */
 
-let guess = prompt('Enter the code: ');
+let input = prompt("enter something: ");
 
-while(guess !== secretCode) {
-    guess = prompt('Enter the code: ');
+while(true) {
+    input = prompt(input);
+    if(input === 'stop') {
+        break
+    }
 }
-console.log("you won!");
+
+console.log('You win');
+
+for(let i = 0; i <= 999; i++) {
+    console.log(i)
+    if(i === 100) {break}
+}
