@@ -16,12 +16,36 @@
     console.log(i)
 } */
 
-const animals = ['animalk', 'djasd', 'dadsd', 'dadsad', 'dadadsd', 'dasdasdd', 'd asdioasj dilasuhdjklsahdjoashfdouis','dahujdjkadhksjadha']
-
+/* const animals = ['animalk', 'djasd', 'dadsd', 'dadsad', 'dadadsd', 'dasdasdd', 'd asdioasj dilasuhdjklsahdjoashfdouis','dahujdjkadhksjadha']
+ */
 /* for(let i = 0; i < animals.length; i++) {
     console.log(i, animals[i])
 } */
 
-for(let i = animals.length -1; i>=0; i--) {
-    console.log(i, animals[i])
+/* for(let i = animals.length -1; i>=0; i--) { */
+/*     console.log(i, animals[i]) */
+/* } */
+/*  */
+/*  */
+
+/* for(let i = 1; i <= 10; i++ ) { */
+/*     console.log(`i is: ${i}`); */
+/*     for(let j = 1; j <= 4; j++) { */
+/*         console.log(`     J is: ${j}`) */
+/*     } */
+/* } */
+
+
+const seatingChart = [
+    ['kristen', 'eric', 'ericka'],
+    ['hdhristen', 'esfsic', 'ericsfa'],
+    ['kristfssn', 'erifs', 'ericka'],
+];
+
+for(let i = 0; i < seatingChart.length; i++) {
+    const row = seatingChart[i];
+    console.log(`Row: ${i + 1}`);
+    for(let j = 0; j < row.length; j++) {
+        console.log(row[j])
+    }
 }
