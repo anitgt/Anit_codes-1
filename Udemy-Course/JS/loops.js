@@ -36,16 +36,32 @@
 /* } */
 
 
-const seatingChart = [
-    ['kristen', 'eric', 'ericka'],
-    ['hdhristen', 'esfsic', 'ericsfa'],
-    ['kristfssn', 'erifs', 'ericka'],
-];
+/* const seatingChart = [ */
+/*     ['kristen', 'eric', 'ericka'], */
+/*     ['hdhristen', 'esfsic', 'ericsfa'], */
+/*     ['kristfssn', 'erifs', 'ericka'], */
+/* ]; */
+/*  */
+/* for(let i = 0; i < seatingChart.length; i++) { */
+/*     const row = seatingChart[i]; */
+/*     console.log(`Row: ${i + 1}`); */
+/*     for(let j = 0; j < row.length; j++) { */
+/*         console.log(row[j]) */
+/*     } */
+/* } */
 
-for(let i = 0; i < seatingChart.length; i++) {
-    const row = seatingChart[i];
-    console.log(`Row: ${i + 1}`);
-    for(let j = 0; j < row.length; j++) {
-        console.log(row[j])
-    }
+/* let count = 0; */
+/*  */
+/* while(count < 10) { */
+/*     console.log(count)  */
+/*     count++ */
+/* } */
+
+const secretCode = "me";
+
+let guess = prompt('Enter the code: ');
+
+while(guess !== secretCode) {
+    guess = prompt('Enter the code: ');
 }
+console.log("you won!");
