@@ -66,18 +66,35 @@
 /* } */
 /* console.log("you won!"); */
 
-let input = prompt("enter something: ");
+/* let input = prompt("enter something: "); */
+/*  */
+/* while(true) { */
+/*     input = prompt(input); */
+/*     if(input === 'stop') { */
+/*         break */
+/*     } */
+/* } */
+/*  */
+/* console.log('You win'); */
+/*  */
+/* for(let i = 0; i <= 999; i++) { */
+/*     console.log(i) */
+/*     if(i === 100) {break} */
+/* } */
 
-while(true) {
-    input = prompt(input);
-    if(input === 'stop') {
-        break
-    }
-}
 
-console.log('You win');
+/* const subreddit = ['ceinge', 'somethinfg', 'nothing', 'helelo', 'i dointknoe']; */
+/*  */
+/* for(let i =0; i <= subreddit.length; i++) { */
+/*     console.log(`Visit reddit.com/r/${subreddit[i]}`) */
+/* }; */
+/*  */
+/*  */
+/* for(let sub of subreddit) { */
+/*     console.log(`Visit reddit.com/r/${sub}`) */
+/* } */
+/*  */
 
-for(let i = 0; i <= 999; i++) {
-    console.log(i)
-    if(i === 100) {break}
+for(let char of 'hello world') {
+    console.log(char)
 }
