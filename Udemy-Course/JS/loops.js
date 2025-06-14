@@ -95,6 +95,45 @@
 /* } */
 /*  */
 
-for(let char of 'hello world') {
-    console.log(char)
+/* for(let char of 'hello world') { */
+/*     console.log(char) */
+/* } */
+/*  */
+
+const testScores = {
+    po: 23,
+    hjhdsj: 74,
+    hjhdasdj: 3,
+    hjdahj: 45,
+    hjhj: 56,
+    hjdahj: 45,
+    hjhj: 12,
+    hjadhj: 65,
+    hjdahj: 56,
+    hjdhj: 71,
+    hjadhj: 13,
+    hjhdasa: 74
 }
+
+/* for(let person in testScores) { */
+/*     console.log(`${person} scored ${testScores[person]}`) */
+/* } */
+/*  */
+/* console.log(Object.keys(testScores)); */
+/*  */
+/* console.log(Object.values(testScores)); */
+/*  */
+/* console.log(Object.entries(testScores)); */
+/*  */
+
+    let total = 0;
+    let scores = Object.values(testScores);
+
+for(let score of scores) {
+    total += score;
+
+}
+
+console.log(total / scores.length)
+
+
