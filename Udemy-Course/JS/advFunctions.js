@@ -30,10 +30,27 @@
 /* console.log(radius); */
 /* console.log(PI) */
 
-for(let i = 0; i < 5; i++) {
-    var msg = "that";
-    console.log(msg)
+/* for(let i = 0; i < 5; i++) { */
+/*     var msg = "that"; */
+/*     console.log(msg) */
+/* } */
+/*  */
+/* console.log(msg) */
+/* console.log(i) */
+
+function bankRobbery() {
+    const heroes = ['spiderman', 'wolverine', 'Black Panther'];
+    function cryForHelp() {
+        function inner() {
+            let color = 'purple'
+            for (let hero of heroes) {
+            console.log(`Please help us ${hero.toUpperCase()}`)
+        }
+        }
+        inner()
+    }
+
+    cryForHelp()
 }
 
-console.log(msg)
-console.log(i)
+bankRobbery()
