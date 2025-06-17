@@ -27,10 +27,16 @@
 // 
 // cat2()
 
-const numbers = [1,3,45,67,8,,5,5,5,345345,5,345,345,34,5,534,5,5];
+const numbers = [1,3,45,67,8,,5,5,5,3345,5,345,345,34,5,534,5,5];
+// 
+// numbers.forEach(function(el) {
+    // if(el % 2 === 0) {
+        // console.log(el);
+    // } 
+// })
 
-numbers.forEach(function(el) {
-    if(el % 2 === 0) {
-        console.log(el);
-    } 
+const doubles = numbers.map(function (el) {
+    return el *2
 })
+
+console.log(doubles)
