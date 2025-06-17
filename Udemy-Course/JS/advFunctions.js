@@ -55,8 +55,30 @@
 /*  */
 /* bankRobbery() */
 
-const add = function(x,y) {
-    return x + y
+/* const add = function(x,y) { */
+/*     return x + y */
+/* } */
+/*  */
+/* console.log(add(12,89)) */
+
+function callTwice(func) {
+    func();
+    func();
 }
 
-console.log(add(12,89))
+function callTenTimes(f) {
+    for(let i = 0; i < 10; i++) {
+        f()
+    }
+}
+
+function rollDice() {
+    const roll = Math.floor(Math.random() * 6) + 1
+    console.log(roll)
+}
+
+
+
+callTwice(rollDice);
+
+callTenTimes(rollDice)
