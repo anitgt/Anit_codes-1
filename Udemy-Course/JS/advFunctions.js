@@ -83,28 +83,28 @@
 /*  */
 /* callTenTimes(rollDice) */
 
-function makeMysteryFunc() {
-    const rand = Math.random();
-    if(rand > 0.5) {
-        return function () {
-            console.log("Congrats, I am a good function!");
-            console.log("You win a million dollars");
-        }
-    } else {
-        return function() {
-            alert("You have been infected by a computer Virus")
-            alert("Stop trying to close this window")
-            alert("Stop trying to close this window")
-            alert("Stop trying to close this window")
-            alert("Stop trying to close this window")
-            alert("Stop trying to close this window")
-            alert("Stop trying to close this window")
-            alert("Stop trying to close this window")
-        }
-    }
-}
-
-const func = makeMysteryFunc();
+// function makeMysteryFunc() {
+    // const rand = Math.random();
+    // if(rand > 0.5) {
+        // return function () {
+            // console.log("Congrats, I am a good function!");
+            // console.log("You win a million dollars");
+        // }
+    // } else {
+        // return function() {
+            // alert("You have been infected by a computer Virus")
+            // alert("Stop trying to close this window")
+            // alert("Stop trying to close this window")
+            // alert("Stop trying to close this window")
+            // alert("Stop trying to close this window")
+            // alert("Stop trying to close this window")
+            // alert("Stop trying to close this window")
+            // alert("Stop trying to close this window")
+        // }
+    // }
+// }
+// 
+// const func = makeMysteryFunc();
 
 //func()
 
@@ -117,15 +117,15 @@ function makeBetweenFunc(min, max) {
 
 // console.log(makeBetweenFunc(10, 100))
 
-const isChild = makeBetweenFunc(0, 18);
-const isSenior = makeBetweenFunc(50, 100);
-const isAdult = makeBetweenFunc(18, 50);
-
-console.log(isChild(60));
-console.log(isAdult(45));
-console.log(isSenior(60))
-
-
+// const isChild = makeBetweenFunc(0, 18);
+// const isSenior = makeBetweenFunc(50, 100);
+// const isAdult = makeBetweenFunc(18, 50);
+// 
+// console.log(isChild(60));
+// console.log(isAdult(45));
+// console.log(isSenior(60))
+// 
+// 
 // makeBetweenFunc(5,10)
 
 // function isBetweeen(num) {
@@ -137,3 +137,20 @@ console.log(isSenior(60))
 // }
 // 
 // console.log(isBetweeen2(10))
+
+
+const add = (x,y) => {
+    return x + y;
+}
+
+const square = x => {
+    return x * x;
+}
+
+// console.log(square(80))
+
+const rollDie = () => {
+    return Math.floor(Math.random() * 6  +1 )
+}
+
+console.log(rollDie())
