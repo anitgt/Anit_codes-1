@@ -61,24 +61,79 @@
 /*  */
 /* console.log(add(12,89)) */
 
-function callTwice(func) {
-    func();
-    func();
-}
+/* function callTwice(func) { */
+/*     func(); */
+/*     func(); */
+/* } */
+/*  */
+/* function callTenTimes(f) { */
+/*     for(let i = 0; i < 10; i++) { */
+/*         f() */
+/*     } */
+/* } */
+/*  */
+/* function rollDice() { */
+/*     const roll = Math.floor(Math.random() * 6) + 1 */
+/*     console.log(roll) */
+/* } */
+/*  */
+/*  */
+/*  */
+/* callTwice(rollDice); */
+/*  */
+/* callTenTimes(rollDice) */
 
-function callTenTimes(f) {
-    for(let i = 0; i < 10; i++) {
-        f()
+function makeMysteryFunc() {
+    const rand = Math.random();
+    if(rand > 0.5) {
+        return function () {
+            console.log("Congrats, I am a good function!");
+            console.log("You win a million dollars");
+        }
+    } else {
+        return function() {
+            alert("You have been infected by a computer Virus")
+            alert("Stop trying to close this window")
+            alert("Stop trying to close this window")
+            alert("Stop trying to close this window")
+            alert("Stop trying to close this window")
+            alert("Stop trying to close this window")
+            alert("Stop trying to close this window")
+            alert("Stop trying to close this window")
+        }
     }
 }
 
-function rollDice() {
-    const roll = Math.floor(Math.random() * 6) + 1
-    console.log(roll)
+const func = makeMysteryFunc();
+
+//func()
+
+
+function makeBetweenFunc(min, max) {
+    return function(num) {
+        return num >= min && num <= max;
+    }
 }
 
+// console.log(makeBetweenFunc(10, 100))
+
+const isChild = makeBetweenFunc(0, 18);
+const isSenior = makeBetweenFunc(50, 100);
+const isAdult = makeBetweenFunc(18, 50);
+
+console.log(isChild(60));
+console.log(isAdult(45));
+console.log(isSenior(60))
 
 
-callTwice(rollDice);
+// makeBetweenFunc(5,10)
 
-callTenTimes(rollDice)
+// function isBetweeen(num) {
+    // return num >= 50 && num <=100
+// }
+// 
+// function isBetweeen2(num) {
+    // return num >= 1 && num <= 10
+// }
+// 
+// console.log(isBetweeen2(10))
