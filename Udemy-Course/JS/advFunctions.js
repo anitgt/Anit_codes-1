@@ -38,19 +38,25 @@
 /* console.log(msg) */
 /* console.log(i) */
 
-function bankRobbery() {
-    const heroes = ['spiderman', 'wolverine', 'Black Panther'];
-    function cryForHelp() {
-        function inner() {
-            let color = 'purple'
-            for (let hero of heroes) {
-            console.log(`Please help us ${hero.toUpperCase()}`)
-        }
-        }
-        inner()
-    }
+/* function bankRobbery() { */
+/*     const heroes = ['spiderman', 'wolverine', 'Black Panther']; */
+/*     function cryForHelp() { */
+/*         function inner() { */
+/*             let color = 'purple' */
+/*             for (let hero of heroes) { */
+/*             console.log(`Please help us ${hero.toUpperCase()}`) */
+/*         } */
+/*         } */
+/*         inner() */
+/*     } */
+/*  */
+/*     cryForHelp() */
+/* } */
+/*  */
+/* bankRobbery() */
 
-    cryForHelp()
+const add = function(x,y) {
+    return x + y
 }
 
-bankRobbery()
+console.log(add(12,89))
