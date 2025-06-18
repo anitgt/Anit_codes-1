@@ -155,12 +155,45 @@ function makeBetweenFunc(min, max) {
 // 
 // console.log(rollDie())
 
-const rollDie = () => (
-    Math.floor(Math.random() * 6 ) + 1
+// const rollDie = () => (
+    // Math.floor(Math.random() * 6 ) + 1
+// )
+// 
+// console.log(rollDie());
+// 
+// const add = (a,b) => a + b;
+// 
+// console.log(add(5,5));
+
+const movies = [
+    {
+        title: 'amandus',
+        score: 89
+    },
+    {
+    title: 'amfews',
+    score: 49
+    },
+    {
+    title: 'asfvs',
+    score: 83
+    },
+    {
+    title: 'afasv',
+    score: 74
+    },
+    {
+    title: 'jikl',
+    score: 56
+    },
+    ]
+
+// const hello = movies.map(function(movie) {
+    // return `${movie.title} - ${movie.score / 10}`
+// });
+
+const hello = movies.map(movie => `${movie.title} - ${movie.score / 10}`
 )
 
-console.log(rollDie());
+console.log(hello);
 
-const add = (a,b) => a + b;
-
-console.log(add(5,5))
