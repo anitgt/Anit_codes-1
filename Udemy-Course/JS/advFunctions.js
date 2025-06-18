@@ -274,4 +274,19 @@ const compare = movies.reduce((bestMovie, currMovie) => {
 const evens = [2,4,6,8];
 
 evens.reduce((sum, num) => sum + num)
-evens.reduce((sum, num) => sum + num, 100)
+evens.reduce((sum, num) => sum + num, 100);
+
+const person = {
+    firstName: 'Viggo',
+    lastName: "Vasteppen",
+    fullName: () => { return`${this.firstName} ${this.lastName}`},
+    shoutName: function() {
+        setTimeout(function() {
+            console.log(this.fullname)
+        }, 3000)
+    }
+}
+
+console.log(person.fullName());
+console.log(person.shoutName())
+
