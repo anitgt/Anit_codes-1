@@ -73,4 +73,12 @@ function raceResults(gold, silver, ...everyoneElse) {
     console.log(`And thanks to everyone else: ${everyoneElse}`)
 };
 
-raceResults('adas', 'dadasd', 'adsaknjdiluahd', 'fsaf','afaf')
+// raceResults('adas', 'dadasd', 'adsaknjdiluahd', 'fsaf','afaf')
+
+
+const scores = [13,13,12,3,123,123,12,312,31,2312,3];
+
+const [gold, silver, bronze, ...everyoneElse] = scores;
+
+console.log(gold)
+console.log(everyoneElse)
