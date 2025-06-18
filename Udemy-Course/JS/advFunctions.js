@@ -224,9 +224,17 @@ const goodMovies = movies.filter((m) => m.score > 80).map(m => m.title );
 const badMovies = movies.filter((m) => m.score < 70);
 
 const recentMovies = movies.filter((m) => m.year > 1990 )
-
-console.log(goodMovies);
-console.log(badMovies);
-console.log(recentMovies)
+// 
+// console.log(goodMovies);
+// console.log(badMovies);
+// console.log(recentMovies)
 
 //console.log(goodMovieTitle)
+
+const exams = [1,34,5,6,67,43,33,56,13,67,13,6];
+
+exams.every(score => score > 40);
+
+exams.some(score => score > 40)
+
+movies.some(m => m.year > 1990)
