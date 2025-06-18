@@ -54,5 +54,23 @@ const dataForm = {
 
 const newUser = {...dataForm, id: 7878, isAdmin: false};
 
-console.log(newUser)
+// console.log(newUser)
+// 
 
+// function sum(){
+    // return arguments.reduce((total, el) => total + el)
+// };
+
+// function sum(...nums) {
+    // return nums.reduce((total, el) => total + el)
+// }
+// 
+// console.log(sum(2423,42,34,2))
+
+function raceResults(gold, silver, ...everyoneElse) {
+    console.log(`Gold medal goes to ${gold}`)
+    console.log(`Gold medal goes to ${silver}`)
+    console.log(`And thanks to everyone else: ${everyoneElse}`)
+};
+
+raceResults('adas', 'dadasd', 'adsaknjdiluahd', 'fsaf','afaf')
