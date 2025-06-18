@@ -26,5 +26,33 @@ const cats = ['Blue', 'Scout', 'Rocket'];
 const dogs = ['Rusty', 'Wyatt'];
 
 const allPets = [...cats, ...dogs]
+// 
+// console.log(allPets)
 
-console.log(allPets)
+const feline = {
+    legs: 4,
+    family: 'Felidae'
+};
+
+const canine = {
+    isFurry: true,
+    family: 'Caninae'
+}
+// 
+// console.log({...feline, color: 'Black'})
+
+const catDog = {...feline, ...canine, family: 'Colty'};
+// console.log(catDog);
+// 
+// console.log({...[1,213,3,13,]})
+
+const dataForm = {
+    email: 'heyme@gmail.com',
+    password: '123@abc',
+    username: 'fumean'
+}
+
+const newUser = {...dataForm, id: 7878, isAdmin: false};
+
+console.log(newUser)
+
