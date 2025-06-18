@@ -139,18 +139,28 @@ function makeBetweenFunc(min, max) {
 // console.log(isBetweeen2(10))
 
 
-const add = (x,y) => {
-    return x + y;
-}
-
-const square = x => {
-    return x * x;
-}
-
+// const add = (x,y) => {
+    // return x + y;
+// }
+// 
+// const square = x => {
+    // return x * x;
+// }
+// 
 // console.log(square(80))
+// 
+// const rollDie = () => {
+    // return Math.floor(Math.random() * 6  +1 )
+// }
+// 
+// console.log(rollDie())
 
-const rollDie = () => {
-    return Math.floor(Math.random() * 6  +1 )
-}
+const rollDie = () => (
+    Math.floor(Math.random() * 6 ) + 1
+)
 
-console.log(rollDie())
+console.log(rollDie());
+
+const add = (a,b) => a + b;
+
+console.log(add(5,5))
