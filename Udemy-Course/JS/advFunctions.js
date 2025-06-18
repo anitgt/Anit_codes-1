@@ -168,23 +168,28 @@ function makeBetweenFunc(min, max) {
 const movies = [
     {
         title: 'amandus',
-        score: 89
+        score: 89,
+        year: 1990
     },
     {
     title: 'amfews',
-    score: 49
+    score: 49,
+    year: 1922
     },
     {
     title: 'asfvs',
-    score: 83
+    score: 83,
+    year: 1995
     },
     {
     title: 'afasv',
-    score: 74
+    score: 74,
+    year: 1912
     },
     {
     title: 'jikl',
-    score: 56
+    score: 56,
+    year: 1989
     },
     ]
 
@@ -203,6 +208,25 @@ const movies = [
 // setTimeout(() => console.log('Are you still there?'), 3000);
 // console.log('GoodBye')
 
-const id = setInterval(() => console.log(Math.random()), 3000);
+//const id = setInterval(() => console.log(Math.random()), 3000);
 
 //clearInterval(id)
+
+const numbers = [1,34,5,6,67,43,33,56,13,67,13,6];
+
+numbers.filter((n) => {
+    return n < 10
+})
+
+
+const goodMovies = movies.filter((m) => m.score > 80).map(m => m.title );
+//const goodMovieTitle = goodMovies.map(m => m.title )
+const badMovies = movies.filter((m) => m.score < 70);
+
+const recentMovies = movies.filter((m) => m.year > 1990 )
+
+console.log(goodMovies);
+console.log(badMovies);
+console.log(recentMovies)
+
+//console.log(goodMovieTitle)
