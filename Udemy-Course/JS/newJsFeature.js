@@ -2,14 +2,22 @@
     // return Math.floor(Math.random() * numSides) + 1;
 // }
 
-function rollDie(numSides = 6) {
-    return Math.floor(Math.random() * numSides) + 1;
-}
+// function rollDie(numSides = 6) {
+    // return Math.floor(Math.random() * numSides) + 1;
+// }
+// 
+// console.log(rollDie());
+// 
+// function greet(person, msg = 'Hey there', punc = '!') {
+    // console.log( `${msg}, ${person}${punc}`);
+// }
+// 
+// greet("pondu", "hiiii")
 
-console.log(rollDie());
+const nums = [1,324,2,4,234,23,423,423,42,4,4,43,3,2,45,46,456,535,35,2,52];
 
-function greet(person, msg = 'Hey there', punc = '!') {
-    console.log( `${msg}, ${person}!`);
-}
+console.log(Math.max(...nums));
 
-greet("pondu", "hiiii", "!!!!")
+console.log(...nums);
+
+console.log(...'hello')
