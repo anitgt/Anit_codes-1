@@ -73,7 +73,7 @@ input.type = 'password'
 
 const h1 = document.querySelector('h1');
 
-console.log(h1);
+// console.log(h1);
 
 let anchor = document.querySelectorAll('a')
 
@@ -82,3 +82,14 @@ for(let ancho of anchor) {
     ancho.style.textDecorationColor = 'black';
     ancho.style.textDecorationStyle = 'wavy'
 }
+
+const h2 = document.querySelector('h2');
+
+// console.log(h2.getAttribute('class'))
+// h2.setAttribute('class','purple');
+// 
+
+h2.classList.contains('purple');
+
+h2.classList.add('purple', 'border');
+h2.classList.remove('purple')
