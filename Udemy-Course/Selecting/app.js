@@ -92,4 +92,11 @@ const h2 = document.querySelector('h2');
 h2.classList.contains('purple');
 
 h2.classList.add('purple', 'border');
-h2.classList.remove('purple')
+h2.classList.remove('purple');
+
+const firstBold = document.querySelector('b');
+
+const paragraph = firstBold.parentElement;
+
+const squareImage = document.querySelector('.square');
+
