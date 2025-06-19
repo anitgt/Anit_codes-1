@@ -42,3 +42,16 @@ for(let all of all1) {
     console.log(all.href)
 }
 console.log(all1)
+
+let text = (document.querySelector('p')).innerText;
+
+console.log(text)
+
+//document.querySelector('p').innerText = 'lolol'
+const allLinks = document.querySelectorAll('a');
+
+// for(let links of allLinks) {
+    // links.innerText = 'none'
+//}
+
+document.querySelector('h1') .innerHTML += '<sup>Hell Nah!</sup>'
