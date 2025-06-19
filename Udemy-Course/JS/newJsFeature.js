@@ -98,3 +98,52 @@ const user = {
 const { email, password } = user
 
 const { born: birthYear, died: deathYear , status = 'positive'} = user
+
+// function fullName(user) {
+    // const {firstName , lastName} = user;
+    // return `${firstName} ${lastName}`
+// }
+
+function fullName({firstName , lastName}) {
+    return `${firstName} ${lastName}`
+}
+
+const movies = [
+    {
+        title: 'amandus',
+        score: 89,
+        year: 1990
+    },
+    {
+    title: 'amfews',
+    score: 49,
+    year: 1922
+    },
+    {
+    title: 'asfvs',
+    score: 83,
+    year: 1995
+    },
+    {
+    title: 'afasv',
+    score: 74,
+    year: 1912
+    },
+    {
+    title: 'jikl',
+    score: 56,
+    year: 1989
+    },
+    ]
+
+    movies.filter((movie) => movie.score > 9);
+
+    movies.filter(({score}) => score >= 9)
+
+    movies.map((movie) => {
+        return `${movie.title} ${movie.year} is rated ${movie.score}`
+    })
+
+    movies.map(({title, score, year}) => {
+        return `${title} ${year} is rated ${score}`
+    })
