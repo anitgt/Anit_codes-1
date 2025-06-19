@@ -79,6 +79,22 @@ function raceResults(gold, silver, ...everyoneElse) {
 const scores = [13,13,12,3,123,123,12,312,31,2312,3];
 
 const [gold, silver, bronze, ...everyoneElse] = scores;
+// 
+// console.log(gold)
+// console.log(everyoneElse)
 
-console.log(gold)
-console.log(everyoneElse)
+const user = {
+    email: 'abc@gmail.com',
+    password: 123,
+    firstName: 'abc',
+    lastName: 'xyz',
+    born: 2004,
+    died: 2012,
+    bio: 'he was a very nice person,',
+    city: 'Francisco',
+    state: 'Calafornia'
+}
+
+const { email, password } = user
+
+const { born: birthYear, died: deathYear , status = 'positive'} = user
