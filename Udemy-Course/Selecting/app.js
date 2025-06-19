@@ -130,4 +130,20 @@ h2.innerText = 'Helo i am new';
 
 const newH1 = document.querySelector('h1');
 
-newH1.insertAdjacentElement("afterend", h2)
+newH1.insertAdjacentElement("afterend", h2);
+
+const firstLi = document.querySelector('li');
+
+const ul = firstLi.parentElement;
+
+ul.removeChild(firstLi);
+
+const b = document.querySelector('b');
+
+const parentOfB = b.parentElement;
+
+//parentOfB.removeChild(b);
+
+const image = document.querySelector('img');
+
+image.remove()
