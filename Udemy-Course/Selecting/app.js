@@ -69,4 +69,16 @@ firstLink.setAttribute('href', 'https://google.com');
 const input = document.querySelector('input[type="text"]');
 input.type = 'password'
 
-console.log(input.type)
+// console.log(input.type)
+
+const h1 = document.querySelector('h1');
+
+console.log(h1);
+
+let anchor = document.querySelectorAll('a')
+
+for(let ancho of anchor) {
+    ancho.style.color = 'red';
+    ancho.style.textDecorationColor = 'black';
+    ancho.style.textDecorationStyle = 'wavy'
+}
