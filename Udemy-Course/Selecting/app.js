@@ -38,14 +38,14 @@ const new1 = document.querySelector('a[title="Java"]');
 const all = document.querySelectorAll('p');
 const all1 = document.querySelectorAll('p a');
 
-for(let all of all1) {
-    console.log(all.href)
-}
-console.log(all1)
+// for(let all of all1) {
+    // console.log(all.href)
+// }
+//console.log(all1)
 
 let text = (document.querySelector('p')).innerText;
 
-console.log(text)
+//console.log(text)
 
 //document.querySelector('p').innerText = 'lolol'
 const allLinks = document.querySelectorAll('a');
@@ -55,3 +55,18 @@ const allLinks = document.querySelectorAll('a');
 //}
 
 document.querySelector('h1') .innerHTML += '<sup>Hell Nah!</sup>'
+
+document.querySelector('#banner');
+
+//console.log(document.querySelector('#banner').id);
+
+let firstLink = document.querySelector('a');
+
+// console.log(firstLink.getAttribute('href') = 'google.com');
+
+firstLink.setAttribute('href', 'https://google.com');
+
+const input = document.querySelector('input[type="text"]');
+input.type = 'password'
+
+console.log(input.type)
