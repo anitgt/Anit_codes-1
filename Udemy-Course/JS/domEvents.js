@@ -102,16 +102,31 @@
     // }
 // })
 
-const form = document.querySelector('#formy');
-const input = document.querySelector('#catName');
-const list = document.querySelector('#list')
+// const form = document.querySelector('#formy');
+// const input = document.querySelector('#catName');
+// const list = document.querySelector('#list')
+// 
+// form.addEventListener('submit', (e) => {
+    // e.preventDefault();
+    // const catName = input.value;
+    // const newLi = document.createElement('LI');
+    // newLi.innerText = catName;
+    // list.append(newLi);
+    // input.value = ''
+// });
+// 
+// 
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const catName = input.value;
-    const newLi = document.createElement('LI');
-    newLi.innerText = catName;
-    list.append(newLi);
-    input.value = ''
-});
+const input = document.querySelector('input');
+const h1 = document.querySelector('h1')
 
+
+// input.addEventListener('change', () => {
+//     console.log('adsa')
+// })
+
+
+input.addEventListener('input', () => {
+    h1.innerText = input.value
+    console.log('input')
+})
