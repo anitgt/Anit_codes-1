@@ -69,13 +69,13 @@
 // }
 // 
 
-const button = document.querySelector('button');
-
-button.addEventListener('click', function(evt) {
-    console.log(evt)
-})
-
-const input = document.querySelector('input');
+// const button = document.querySelector('button');
+// 
+// button.addEventListener('click', function(evt) {
+    // console.log(evt)
+// })
+// 
+// const input = document.querySelector('input');
 
 // input.addEventListener('keydown', (e) => {
     // console.log(e.key);
@@ -83,21 +83,28 @@ const input = document.querySelector('input');
 // })
 // input.addEventListener('keyup', () => console.log('Keyup') )
 
-window.addEventListener('keydown', (e) => {
-    switch(e.code) {
-        case 'ArrowUp':
-            console.log('UP');
-            break;
-        case 'ArrowDown':
-            console.log('Down');
-            break;
-        case 'ArrowLeft':
-            console.log('Left');
-            break;
-        case 'ArrowRight':
-            console.log('Right');
-            break;
-        default: 
-            console.log('Ignored')
-    }
+// window.addEventListener('keydown', (e) => {
+    // switch(e.code) {
+        // case 'ArrowUp':
+            // console.log('UP');
+            // break;
+        // case 'ArrowDown':
+            // console.log('Down');
+            // break;
+        // case 'ArrowLeft':
+            // console.log('Left');
+            // break;
+        // case 'ArrowRight':
+            // console.log('Right');
+            // break;
+        // default: 
+            // console.log('Ignored')
+    // }
+// })
+
+const form = document.querySelector('#formy');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Submitted form');
 })
