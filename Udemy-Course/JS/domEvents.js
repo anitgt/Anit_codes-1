@@ -16,3 +16,27 @@ document.querySelector('h1') .onclick = function() {
      console.log("i am here");
     }
 
+const btn3 = document.querySelector('#v3');
+
+btn3.addEventListener('click', ()=> {
+    console.log('Clicked') 
+});
+
+function twist() {
+    console.log('twist')
+} 
+
+function shout() {
+    console.log('Shout')
+}
+
+const tasButton = document.querySelector('#tas');
+
+// tasButton.onclick = twist
+// tasButton.onclick = shout;
+
+// tas.onclick = twist
+// tas.onclick = shout
+
+tasButton.addEventListener('click', twist, {once: true});
+tasButton.addEventListener('click', shout);
