@@ -103,8 +103,15 @@
 // })
 
 const form = document.querySelector('#formy');
+const input = document.querySelector('#catName');
+const list = document.querySelector('#list')
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('Submitted form');
-})
+    const catName = input.value;
+    const newLi = document.createElement('LI');
+    newLi.innerText = catName;
+    list.append(newLi);
+    input.value = ''
+});
+
