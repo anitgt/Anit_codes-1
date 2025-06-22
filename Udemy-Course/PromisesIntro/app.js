@@ -24,28 +24,28 @@ const fakeRequestPromise = (url) => {
 }
 
 
-fakeRequestCallback('books.com/page1',(response) => {
-    console.log('It worked!');
-    console.log(response)
-    fakeRequestCallback('books.com/page2', (response) => {
-        console.log('It worked Again');
-        console.log(response);
-        fakeRequestCallback('books.com/page2', (response) => {
-            console.log('It worked once again!');
-            console.log(response)
-        }, (err) => {
-            console.log('Error (3)');
-            console.log(err)
-        })
-    }, (err) => {
-        console.log('Error');
-        console.log(err)
-    } )
-}, 
-(err) => {
-     console.log('Error')
-     console.log(err)
-} )
+// fakeRequestCallback('books.com/page1',(response) => {
+//     console.log('It worked!');
+//     console.log(response)
+//     fakeRequestCallback('books.com/page2', (response) => {
+//         console.log('It worked Again');
+//         console.log(response);
+//         fakeRequestCallback('books.com/page2', (response) => {
+//             console.log('It worked once again!');
+//             console.log(response)
+//         }, (err) => {
+//             console.log('Error (3)');
+//             console.log(err)
+//         })
+//     }, (err) => {
+//         console.log('Error');
+//         console.log(err)
+//     } )
+// }, 
+// (err) => {
+//      console.log('Error')
+//      console.log(err)
+// } )
 
 
 // fakeRequestCallback('books.com/page1',
@@ -125,3 +125,25 @@ fakeRequestCallback('books.com/page1',(response) => {
 
 
 
+
+fakeRequestPromise('yelp.com/api/coffee/page1')
+    .then(() => {
+        console.log('It worked (1)');
+        fakeRequestPromise('yelp.com/api/coffee/page2')
+        .then(() => {
+            console.log('It worked (2)');
+            fakeRequestPromise('yelp.com/api/coffee/page3')
+            .then(() => {
+                console.log('It worked (3)')
+            })
+            .catch(() => {
+                console.log('Error(3)')
+            })
+        })
+        .catch(() => {
+            console.log('Error(2)')
+        })
+    })
+    .catch(() => {
+        console.log('Error (1)')
+    })
