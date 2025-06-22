@@ -131,23 +131,23 @@
     // console.log('input')
 // })
 
-function randomColor() {
-    const r = Math.floor(Math.random() * 255 + 1)
-    const g = Math.floor(Math.random() * 255 + 1)
-    const b = Math.floor(Math.random() * 255 + 1)
-    const color = `rgb( ${r}, ${g}, ${b})`;
-    return color
-}
-
-const button = document.querySelector('button');
-const container = document.querySelector('.container')
-
-container.addEventListener('click', () => {
-    container.classList.toggle('hide');
-})
-
-button.addEventListener('click', (e)=> {
-    container.style.backgroundColor = randomColor();
-    e.stopPropagation()
-})
+// function randomColor() {
+    // const r = Math.floor(Math.random() * 255 + 1)
+    // const g = Math.floor(Math.random() * 255 + 1)
+    // const b = Math.floor(Math.random() * 255 + 1)
+    // const color = `rgb( ${r}, ${g}, ${b})`;
+    // return color
+// }
+// 
+// const button = document.querySelector('button');
+// const container = document.querySelector('.container')
+// 
+// container.addEventListener('click', () => {
+    // container.classList.toggle('hide');
+// })
+// 
+// button.addEventListener('click', (e)=> {
+    // container.style.backgroundColor = randomColor();
+    // e.stopPropagation()
+// })
 
