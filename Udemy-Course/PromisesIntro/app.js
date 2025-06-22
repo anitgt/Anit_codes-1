@@ -126,24 +126,45 @@ const fakeRequestPromise = (url) => {
 
 
 
+// fakeRequestPromise('yelp.com/api/coffee/page1')
+//     .then(() => {
+//         console.log('It worked (1)');
+//         fakeRequestPromise('yelp.com/api/coffee/page2')
+//         .then(() => {
+//             console.log('It worked (2)');
+//             fakeRequestPromise('yelp.com/api/coffee/page3')
+//             .then(() => {
+//                 console.log('It worked (3)')
+//             })
+//             .catch(() => {
+//                 console.log('Error(3)')
+//             })
+//         })
+//         .catch(() => {
+//             console.log('Error(2)')
+//         })
+//     })
+//     .catch(() => {
+//         console.log('Error (1)')
+//     })
+
 fakeRequestPromise('yelp.com/api/coffee/page1')
-    .then(() => {
-        console.log('It worked (1)');
-        fakeRequestPromise('yelp.com/api/coffee/page2')
-        .then(() => {
-            console.log('It worked (2)');
-            fakeRequestPromise('yelp.com/api/coffee/page3')
-            .then(() => {
-                console.log('It worked (3)')
-            })
-            .catch(() => {
-                console.log('Error(3)')
-            })
-        })
-        .catch(() => {
-            console.log('Error(2)')
-        })
-    })
-    .catch(() => {
-        console.log('Error (1)')
-    })
+.then((data) => {
+    console.log('It worked (1)');
+    console.log(data)
+    return fakeRequestPromise('yelp.com/api/coffee/page1');
+})
+ .then((data) => {
+     console.log('It worked (2)');
+     console.log(data)
+     return fakeRequestPromise('yelp.com/api/coffee/page2');
+})
+.then((data) => {
+     console.log('It worked (3)');
+     console.log(data)
+     return fakeRequestPromise('yelp.com/api/coffee/page3');
+})
+.catch((err) => {
+    console.log('Oh no Error')
+    console.log(err)
+})
