@@ -148,23 +148,49 @@ const fakeRequestPromise = (url) => {
 //         console.log('Error (1)')
 //     })
 
-fakeRequestPromise('yelp.com/api/coffee/page1')
-.then((data) => {
-    console.log('It worked (1)');
-    console.log(data)
-    return fakeRequestPromise('yelp.com/api/coffee/page1');
-})
- .then((data) => {
-     console.log('It worked (2)');
-     console.log(data)
-     return fakeRequestPromise('yelp.com/api/coffee/page2');
-})
-.then((data) => {
-     console.log('It worked (3)');
-     console.log(data)
-     return fakeRequestPromise('yelp.com/api/coffee/page3');
-})
-.catch((err) => {
-    console.log('Oh no Error')
-    console.log(err)
-})
+// fakeRequestPromise('yelp.com/api/coffee/page1')
+// .then((data) => {
+//     console.log('It worked (1)');
+//     console.log(data)
+//     return fakeRequestPromise('yelp.com/api/coffee/page1');
+// })
+//  .then((data) => {
+//      console.log('It worked (2)');
+//      console.log(data)
+//      return fakeRequestPromise('yelp.com/api/coffee/page2');
+// })
+// .then((data) => {
+//      console.log('It worked (3)');
+//      console.log(data)
+//      return fakeRequestPromise('yelp.com/api/coffee/page3');
+// })
+// .catch((err) => {
+//     console.log('Oh no Error')
+//     console.log(err)
+// })
+
+const fakeRequest = (url) => {
+    return new Promise((resolve, reject) => {
+        const rand = Math.random();
+        setTimeout(() => {
+            if (rand < 0.5) {
+                resolve('Your Fake data')
+            } else {
+                reject('Connection Timeout')
+            }
+        }, 1000)
+    })
+}
+
+fakeRequest('dogs/1')
+    .then((val) => {
+        console.log('Done with requests!');
+        console.log('Data is: ',val)
+    })
+    .catch((err) => {
+        console.log('Error Occured');
+        console.log(err)
+    })
+
+
+    
