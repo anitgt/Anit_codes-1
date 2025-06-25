@@ -103,20 +103,30 @@
 
 //axio in async function :- 
 
-const loadStarWarData = async (id) => {
-    try {
-    const data = await axios.get(`https://swapi.info/api/people/${id}`);
-    console.log(data.data);
-    }
+// const loadStarWarData = async (id) => {
+//     try {
+//     const data = await axios.get(`https://swapi.info/api/people/${id}`);
+//     console.log(data.data);
+//     }
 
-    catch(e) {
-        console.log('Error', e)
-    }
+//     catch(e) {
+//         console.log('Error', e)
+//     }
+// }
+
+// loadStarWarData(99)
+// loadStarWarData(10)
+// loadStarWarData(5)
+// loadStarWarData(5)
+// loadStarWarData(55)
+// loadStarWarData(33)
+
+//Headers with axios:- 
+
+const getDadJoke = async () => {
+    const config = {headers: { Accept: 'application/json'}}
+    const res = await axios.get('https://icanhazdadjoke.com/', config);
+    console.log(res.data.joke)
 }
 
-loadStarWarData(99)
-loadStarWarData(10)
-loadStarWarData(5)
-loadStarWarData(5)
-loadStarWarData(55)
-loadStarWarData(33)
+getDadJoke()
