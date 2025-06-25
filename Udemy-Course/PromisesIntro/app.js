@@ -21,7 +21,7 @@ const fakeRequestPromise = (url) => {
             }
         }, delay)
     })
-}
+}    
 
 
 // fakeRequestCallback('books.com/page1',(response) => {
