@@ -20,4 +20,28 @@ const dog = {
     owner: 'Not Me'
 }
 
-const newJSON = JSON.stringify(dog)
+const newJSON = JSON.stringify(dog);
+
+//Making XHRs
+
+const req = new XMLHttpRequest();
+
+req.onload = function () {
+    console.log('It loaded');
+    // console.log(this.responseText)
+
+    const jsObject = JSON.parse(this.responseText)
+    //console.log(jsObject);
+    console.log(jsObject.name, jsObject.height)
+}
+
+req.onerror = function() {
+    console.log('Error');
+    console.log(this)
+}
+
+req.open("GET", 'https://swapi.info/api/people/1');
+req.send();
+
+
+
