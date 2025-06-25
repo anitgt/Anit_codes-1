@@ -1,26 +1,26 @@
 //Json api file here
 
-const api = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd'
+//const api = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd'
 
 //Json file here 
 
-const data = '{"bitcoin": { "usd": 65890 }, "ethereum": { "usd": 3500 }}';
+// const data = '{"bitcoin": { "usd": 65890 }, "ethereum": { "usd": 3500 }}';
 
 
 //json to js object 
 
-const newData = JSON.parse(data)
+// const newData = JSON.parse(data)
 
 //js object  to JSON 
 
-const dog = {
-    breed: 'lab',
-    color: 'black',
-    isAlive: true,
-    owner: 'Not Me'
-}
+// const dog = {
+//     breed: 'lab',
+//     color: 'black',
+//     isAlive: true,
+//     owner: 'Not Me'
+// }
 
-const newJSON = JSON.stringify(dog);
+// const newJSON = JSON.stringify(dog);
 
 //Making XHRs
 
@@ -68,23 +68,55 @@ const newJSON = JSON.stringify(dog);
 //     })
 
 //using async function :-
+// 
+// const loadStarWarsPeople = async () => {
+//     try {
+//         const res = await fetch('https://swapi.info/api/people/1');
+//         const data = await res.json();
+//         console.log(data);
 
-const loadStarWarsPeople = async () => {
-    try {
-        const res = await fetch('https://swapi.info/api/people/1');
-        const data = await res.json();
-        console.log(data);
+//         const res2 = await fetch('https://swapi.info/api/people/2');
+//         const data2 = await res2.json();
+//         console.log(data2)
+//     }
 
-        const res2 = await fetch('https://swapi.info/api/people/2');
-        const data2 = await res2.json();
-        console.log(data2)
-    }
-
-    catch (e) {
-        console.log('Error');
-        console.log(e);
-    }
+//     catch (e) {
+//         console.log('Error');
+//         console.log(e);
+//     }
     
+// }
+
+// loadStarWarsPeople()
+
+
+//Axios :-
+// 
+// axios.get('https://swapi.info/api/psgsgffdrfveople/1')
+//     .then((res) => {
+//         console.log('Data:',res)
+//     })
+//     .catch((e) => {
+//         console.log('Error');
+//         console.log(e)
+//     })
+
+//axio in async function :- 
+
+const loadStarWarData = async (id) => {
+    try {
+    const data = await axios.get(`https://swapi.info/api/people/${id}`);
+    console.log(data.data);
+    }
+
+    catch(e) {
+        console.log('Error', e)
+    }
 }
 
-loadStarWarsPeople()
+loadStarWarData(99)
+loadStarWarData(10)
+loadStarWarData(5)
+loadStarWarData(5)
+loadStarWarData(55)
+loadStarWarData(33)
