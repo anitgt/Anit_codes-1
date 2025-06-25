@@ -123,10 +123,31 @@
 
 //Headers with axios:- 
 
-const getDadJoke = async () => {
-    const config = {headers: { Accept: 'application/json'}}
-    const res = await axios.get('https://icanhazdadjoke.com/', config);
-    console.log(res.data.joke)
+const jokes = document.querySelector('#jokes');
+const button = document.querySelector('button');
+
+const addNewJoke = async () => {
+    const jokeText = await getDadJoke();
+    //console.log(jokeText)
+    const newLi = document.createElement('Li');
+    newLi.innerText = jokeText;
+    jokes.append(newLi);
 }
 
-getDadJoke()
+
+const getDadJoke = async () => {
+    try {
+        const config = {headers: { Accept: 'application/json'}}
+        const res = await axios.get('https://icanhazdadjoke.com/', config);
+        return res.data.joke
+    }
+    catch(e){
+        console.log(e.message)
+        return 'No jokes available sorry'
+        
+    }
+    
+}
+
+button.addEventListener('click', addNewJoke);
+
