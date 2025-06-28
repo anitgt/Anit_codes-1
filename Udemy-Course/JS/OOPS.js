@@ -121,85 +121,126 @@
 // classes practice:- 
 
 
-class Color {
-    constructor(r, g, b, name) {
-        this.r = r;
-        this.g = g;
-        this.b = b;
-        this.name = name;
-        this.calcHSL(); // Precompute and store h, s, l
+// class Color {
+//     constructor(r, g, b, name) {
+//         this.r = r;
+//         this.g = g;
+//         this.b = b;
+//         this.name = name;
+//         this.calcHSL(); // Precompute and store h, s, l
+//     }
+
+//     innerRGB() {
+//         const { r, g, b } = this;
+//         return `${r}, ${g}, ${b}`;
+//     }
+
+//     hex() {
+//         const { r, g, b } = this;
+//         return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+//     }
+
+//     rgb() {
+//         return `rgb(${this.innerRGB()})`;
+//     }
+
+//     rgba(a = 1.0) {
+//         return `rgba(${this.innerRGB()}, ${a})`;
+//     }
+
+//     hsl() {
+//         const { h, s, l } = this;
+//         return `hsl(${h}, ${s}%, ${l}%)`;
+//     }
+//     opposite() {
+//         const { h, s, l } = this;
+//         const newHue = (h + 180) % 360 ;
+//         return `hsl(${newHue}, ${s}%, ${l}%)`;
+//     }
+
+//     fullySaturated() {
+//         const { h,l } = this;
+//         return `hsl(${h}, 100%, ${l}%)`;
+//     }
+
+//     calcHSL() {
+//         let r = this.r / 255;
+//         let g = this.g / 255;
+//         let b = this.b / 255;
+
+//         const max = Math.max(r, g, b);
+//         const min = Math.min(r, g, b);
+//         let h, s, l = (max + min) / 2;
+
+//         if (max === min) {
+//             h = s = 0; // achromatic
+//         } else {
+//             const d = max - min;
+//             s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+//             switch (max) {
+//                 case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+//                 case g: h = (b - r) / d + 2; break;
+//                 case b: h = (r - g) / d + 4; break;
+//             }
+
+//             h /= 6;
+//         }
+
+//         this.h = Math.round(h * 360);
+//         this.s = Math.round(s * 100);
+//         this.l = Math.round(l * 100);
+//     }
+// }
+
+// const tomato = new Color(122,222,111, 'Tomato');
+// const white = new Color(255,255,255, 'White');
+
+// console.log(tomato.hsl())
+// console.log(white.hsl())
+
+// document.body.style.backgroundColor = tomato.opposite()
+// document.body.style.backgroundColor = tomato.fullySaturated()
+
+// console.log(tomato.fullySaturated())
+
+//Extend and super keywords :-
+class Pet {
+        constructor(name, age) {
+        console.log('In pet constructor');
+         this.name = name;
+        this.age = age;
     }
-
-    innerRGB() {
-        const { r, g, b } = this;
-        return `${r}, ${g}, ${b}`;
-    }
-
-    hex() {
-        const { r, g, b } = this;
-        return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
-    }
-
-    rgb() {
-        return `rgb(${this.innerRGB()})`;
-    }
-
-    rgba(a = 1.0) {
-        return `rgba(${this.innerRGB()}, ${a})`;
-    }
-
-    hsl() {
-        const { h, s, l } = this;
-        return `hsl(${h}, ${s}%, ${l}%)`;
-    }
-    opposite() {
-        const { h, s, l } = this;
-        const newHue = (h + 180) % 360 ;
-        return `hsl(${newHue}, ${s}%, ${l}%)`;
-    }
-
-    fullySaturated() {
-        const { h,l } = this;
-        return `hsl(${h}, 100%, ${l}%)`;
-    }
-
-    calcHSL() {
-        let r = this.r / 255;
-        let g = this.g / 255;
-        let b = this.b / 255;
-
-        const max = Math.max(r, g, b);
-        const min = Math.min(r, g, b);
-        let h, s, l = (max + min) / 2;
-
-        if (max === min) {
-            h = s = 0; // achromatic
-        } else {
-            const d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-
-            switch (max) {
-                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-                case g: h = (b - r) / d + 2; break;
-                case b: h = (r - g) / d + 4; break;
-            }
-
-            h /= 6;
-        }
-
-        this.h = Math.round(h * 360);
-        this.s = Math.round(s * 100);
-        this.l = Math.round(l * 100);
+    
+    eat() {
+        return `${this.name} is eating!`
     }
 }
 
-const tomato = new Color(122,222,111, 'Tomato');
-const white = new Color(255,255,255, 'White');
 
-console.log(tomato.hsl())
-console.log(white.hsl())
+class Cat extends Pet{
+    constructor(name, age, livesLeft = 9) {
+        console.log('In cat constructor');
+        super(name, age)
+        this.livesLeft = livesLeft
+    }
+    meow() {
+        return 'meow'
+    }
 
-document.body.style.backgroundColor = tomato.opposite()
-document.body.style.backgroundColor = tomato.fullySaturated()
+    eat() {
+        return 'Sniffs his food!'
+    }
+}
 
-console.log(tomato.fullySaturated())
+const pookie = new Cat('pookie', 21, 10);
+console.log(pookie);
+
+class Dog extends Pet{
+    bark() {
+        return 'Whoff'
+    }
+}
+
+// const mihir = new Dog('Mihir', 22);
+// console.log(mihir)
