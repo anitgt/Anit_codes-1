@@ -27,6 +27,11 @@ app.get('/dogs', (req, res) => {
     res.send('Thats a dawgg')
 })
 
+app.get('/r/:subreddit/:postId', (req, res) => {
+    const { subreddit, postId } = req.params;
+    res.send(`<h1>Viewing post id: ${postId} on the ${subreddit} subreddit`)
+
+})
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');
