@@ -10,3 +10,28 @@ const app = express();
 //     // })
 //     res.send('<h1>This is my webpage</h1>');
 // });
+
+app.get('/', (req, res) => {
+    res.send('<h1>This is the homepage</h>')
+})
+
+app.post('/cats',(req, res) => {
+    res.send('Post req to /cats!!!')
+})
+
+app.get('/cats', (req, res) => {
+    res.send('Meow');
+})
+
+app.get('/dogs', (req, res) => {
+    res.send('Thats a dawgg')
+})
+
+
+app.listen(3000, () => {
+    console.log('Listening on port 3000');
+});
+
+app.get(/(.*)/, (req, res) => {
+    res.send('Nothing here')
+})
