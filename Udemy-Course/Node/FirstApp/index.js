@@ -31,7 +31,16 @@ app.get('/r/:subreddit/:postId', (req, res) => {
     const { subreddit, postId } = req.params;
     res.send(`<h1>Viewing post id: ${postId} on the ${subreddit} subreddit`)
 
-})
+});
+
+app.get('/search',(req, res) => {
+    const { q } = req.query
+    if(!q) {
+        res.send("Nothing Searched")
+    } else{
+        res.send(`<h1>Search request for ${q}</h1>`)
+    }
+} )
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');
