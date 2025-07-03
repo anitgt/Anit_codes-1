@@ -36,7 +36,7 @@ app.get('/r/:subreddit/:postId', (req, res) => {
 app.get('/search',(req, res) => {
     const { q } = req.query
     if(!q) {
-        res.send("Nothing Searched")
+        res.send("Nothing Searched!!!")
     } else{
         res.send(`<h1>Search request for ${q}</h1>`)
     }
