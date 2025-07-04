@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const redditData = require('./data.json');
-console.log(redditData)
+// console.log(redditData)
 
 app.use(express.static(path.join(__dirname, 'public')));
 
