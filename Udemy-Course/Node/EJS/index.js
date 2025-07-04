@@ -14,6 +14,11 @@ app.get('/rand', (req, res)=> {
     res.render('random', {num : num})
 })
 
+app.get('/cats', (req, res) => {
+    const cats = ['Silly', 'billy', 'Millie', 'Killy', 'Tommy'];
+    res.render('cats', { cats })
+})
+
 app.get('/r/:subreddit', (req, res) => {
     const {subreddit} = req.params;
     res.render('subreddit', { subreddit })
@@ -22,3 +27,4 @@ app.get('/r/:subreddit', (req, res) => {
 app.listen(3000, () => {
     console.log('Listening on port 3000')
 })
+
