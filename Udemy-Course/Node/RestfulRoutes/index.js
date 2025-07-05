@@ -10,18 +10,22 @@ app.set('view engine', 'ejs')
 
 const comments = [
     {
+        id: 1,
         username: 'Todd',
         comment: 'Nice one'
     },
     {
+        id: 2,
         username: 'Bomm',
         comment: 'Hello'
     },
     {
+        id: 3,
         username: 'lil baby',
         comment: 'Nice drip ma boy'
     },
     {
+        id: 4,
         username: 'Travis scott',
         comment: 'La flame'
     },
@@ -42,9 +46,14 @@ app.get('/comments/new', (req, res) => {
 })
 
 app.get('/tacos', (req,res) => {
-    res.send('Get /Tacos response')
+    res.send('Get /tacos response')
 })
 
+app.get('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === parseInt(id));
+    res.render('comments/show', {comment})
+})
 
 app.post('/tacos', (req, res) => {
     const { meat, qty} = req.body;
