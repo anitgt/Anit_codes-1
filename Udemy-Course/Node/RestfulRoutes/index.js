@@ -28,7 +28,17 @@ const comments = [
 ];
 
 app.get('/comments', (req, res) => {
-    res.render('comments/index', {comments})
+    res.render('comments/index', {comments});
+})
+
+app.post('/comments', (req, res) => {
+    const { username, comment}  = req.body;
+    comments.push({username , comment})
+        res.send('It worked')
+})
+
+app.get('/comments/new', (req, res) => {
+    res.render('comments/new', {comments})
 })
 
 app.get('/tacos', (req,res) => {
