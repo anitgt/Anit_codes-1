@@ -11,7 +11,7 @@ app.use(methodOverride('_method'))
 app.set('views',path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-const comments = [
+let comments = [
     {
         id: uuid(),
         username: 'Todd',
@@ -75,6 +75,12 @@ app.get('/comments/:id/edit', (req,res) => {
 app.post('/tacos', (req, res) => {
     const { meat, qty} = req.body;
     res.send(`Ok! Here are your ${qty} of ${meat} `)
+})
+
+app.delete('/comments/:id' , (req,res) => {
+    const {id} = req.params;
+    comments = comments.filter((c) => c.id !== id);
+    res.redirect('/comments')
 })
 
 app.listen(3000, () => {
