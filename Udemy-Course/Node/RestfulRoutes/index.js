@@ -62,6 +62,12 @@ app.patch('/comments/:id', (req, res) => {
     const foundComment = comments.find(c => c.id === id);
     foundComment.comment = newCommentText;
     res.redirect('/comments')
+});
+
+app.get('/comments/:id/edit', (req,res) => {
+    const {id} = req.params;
+    const comment = comments.find(c => c.id === id);
+    res.render('comments/edit', { comment })
 })
 
 app.post('/tacos', (req, res) => {
