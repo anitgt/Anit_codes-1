@@ -16,8 +16,8 @@ const productSchema = new mongoose.Schema({
         },
         price: {
             type: Number,
-            require: true,
-            min: 0
+            required: true,
+            min: [0, 'Price must be positive!']
         },
         onSale: {
             type: Boolean,
@@ -33,23 +33,53 @@ const productSchema = new mongoose.Schema({
                 type: Number,
                 default: 0
             }
+        },
+        size: {
+            type: String,
+            enum: ['S', 'M', 'L']
         }
     })
 
+// productSchema.methods.greet = function() {
+//     console.log('Hello, How are you my boi');
+//     console.log(`- From ${this.name}`)
+// }
+
+productSchema.methods.toggleOnSale = function() {
+    this.onSale = !this.onSale;
+    return this.save();
+}
+
+productSchema.methods.addCategory = function (newCat) {
+    this.categories.push(newCat);
+    return this.save();
+}
 const Product = mongoose.model('Product', productSchema);
 
-const bike = new Product({
-    name: 'Bike helmet',
-    price: 29.50,
-    categories: ['cycling', 'Walking', 'Flying'],
-})
+const findProduct = async () => {
+   const foundProduct = await Product.findOne({ name: 'Mountain Bike' });
+   console.log(foundProduct);
+   await foundProduct.toggleOnSale();
+   console.log(foundProduct);
+   await foundProduct.addCategory('Outdoors')
+   console.log(foundProduct);
+}
 
-bike.save()
-    .then(data => {
-        console.log('It worked');
-        console.log(data)
-    })
-    .catch(err => {
-        console.log('Error Occured'),
-        console.log(err)
-    })
+findProduct()
+
+// const bike = new Product({
+//     name: 'Cycling Jersey',
+//     price: 2.55,
+//     categories: ['cycling'],
+//     size: 'XS'
+// })
+
+// bike.save()
+//     .then(data => {
+//         console.log('It worked');
+//         console.log(data)
+//     })
+//     .catch(err => {
+//         console.log('Error Occured'),
+//         console.log(err)
+//     })
