@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
+const Product = require('./models/product');
+
 main().then(() => {
     console.log('Mongo connection Open!')
 })
@@ -12,7 +14,7 @@ main().catch(err =>  {
 });
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/shopApp');
+  await mongoose.connect('mongodb://127.0.0.1:27017/farmStand');
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
