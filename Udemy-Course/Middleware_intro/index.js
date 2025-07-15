@@ -17,7 +17,7 @@ app.use('/dogs', (req,res,next) => {
     next()
 });
 
-app.use('/secret',(req,res,next) => {
+const verifyPassword = ((req,res,next) => {
     const { password } = req.query
     if (password === 'chickennugget') {
         next()
@@ -48,7 +48,7 @@ app.get('/dogs', (req, res) => {
     res.send('Woof Woof');
 });
 
-app.get('/secret', (req,res) => {
+app.get('/secret', verifyPassword,(req,res) => {
     res.send('Welcome to the secret area of the internet')
 })
 
