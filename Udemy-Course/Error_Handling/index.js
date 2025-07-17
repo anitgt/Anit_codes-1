@@ -54,11 +54,20 @@ app.get('/secret', verifyPassword,(req,res) => {
 })
 
 app.get('/error', (req,res) => {
-    chicken.fly
+    chicken.fly()
 })
 
 app.use((req,res) => {
     res.status(404).send('Not found!')
+});
+
+app.use((err,req,res,next)=> {
+    console.log('*****************')
+    console.log('********ERROR*********')
+    console.log('*****************');
+    res.status(500).send('Oh boy error');
+    console.log(err)
+    next(err)
 })
 
 app.listen(3000,()=> {
