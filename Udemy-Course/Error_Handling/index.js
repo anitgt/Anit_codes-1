@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan')
 
-// morgan('tiny')
+const AppError = require('./AppError');
+
+morgan('tiny')
 
 app.use(morgan('tiny'));
 
@@ -22,8 +24,9 @@ const verifyPassword = ((req,res,next) => {
     if (password === 'chickennugget') {
         next()
     }
+    throw new AppError('password required', 401);
     //res.send('Need a password');
-    throw new Error('Password required!')
+    //throw new Error('Password required!',401)
 })
 
 // app.use((req, res,next) => {
@@ -57,17 +60,27 @@ app.get('/error', (req,res) => {
     chicken.fly()
 })
 
+app.get('/admin', (req,res,) => {
+    throw new AppError('Not An admin', 403)
+})
+
 app.use((req,res) => {
     res.status(404).send('Not found!')
 });
 
+// app.use((err,req,res,next)=> {
+//     console.log('*****************')
+//     console.log('********ERROR*********')
+//     console.log('*****************');
+//     // res.status(500).send('Oh boy error');
+//     console.log(err)
+//     next(err)
+// })
+
 app.use((err,req,res,next)=> {
-    console.log('*****************')
-    console.log('********ERROR*********')
-    console.log('*****************');
-    res.status(500).send('Oh boy error');
-    console.log(err)
-    next(err)
+    const { status = 500 } = err;
+    const { message = 'Something went wrong'} = err
+    res.status(status).send(message)
 })
 
 app.listen(3000,()=> {
