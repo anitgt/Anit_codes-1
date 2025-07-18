@@ -28,8 +28,7 @@ app.use(methodOverride('_method'))
 
 const categories = ['fruit', 'vegetable', 'dairy']
 
-app.get('/products', async(req, res, next) => {
-    try {
+app.get('/products', wrapAsync(async(req, res, next) => {
         const { category } = req.query;
     if(category) {
         const products = await Product.find({category: category});
@@ -37,77 +36,55 @@ app.get('/products', async(req, res, next) => {
     } else {const products = await Product.find({});
             res.render('products/index' , {products, category: 'All'})
     }
-    } catch (e) {
-        next(e)
-    }
-})
+}))
 
 app.get('/products/new', (req,res) => {
     // throw new AppError('Test', 401)
     res.render('products/new', { categories })
 })
 
-app.post('/products', async(req,res,next) => {
-    try {
+app.post('/products',wrapAsync(async(req,res,next) => {
         const newProduct = new Product(req.body);
     await newProduct.save();
     res.redirect(`/products/${newProduct._id}`)
-    }
-    catch (e){
-        next(e);
-    }
-})
+}))
 
-app.get('/products/:id', async (req, res, next) => {
-    try{
+app.get('/products/:id', wrapAsync(async (req, res, next) => {
         const { id } = req.params;
     const product = await Product.findById(id);
     if(!product) {
       throw next(new AppError('No product Found with that id!', 404));
     }
     res.render('products/show', {product})
-    }
-    catch (e) {
-        next(e)
-    }
-})
+    }))
 
-app.get('/products/:id/edit', async (req,res,next) => {
-    try {
+app.get('/products/:id/edit', wrapAsync(async (req,res,next) => {
          const { id } = req.params;
     const product = await Product.findById(id);
     if(!product) {
       return next(new AppError('No product Found with that id edit ', 404));
     }
     res.render('products/edit', { product, categories })
-    }
-    catch (e) {
-        next(e)
-    }   
-})
+}))
 
-app.put('/products/:id', async (req,res,next) => {
-    try {
+app.put('/products/:id', wrapAsync(async(req,res,next) => {
     const { id } = req.params;
     const product = await Product.findByIdAndUpdate(id, req.body, {runValidators: true, new: true})
     res.redirect(`/products/${product._id}`)
     console.log(req.body)
-}
-    catch (e) {
-        next(e)
-    }
-})
+}))
 
-app.delete('/products/:id',async(req,res,next) => {
-    try {
+function wrapAsync(fn) {
+    return function(req,res,next) {
+        fn(req,res,next).catch(e => next(e))
+    }
+}
+
+app.delete('/products/:id', wrapAsync(async(req,res,next) => {
         const { id } = req.params;
     const deletedProduct = await Product.findByIdAndDelete(id);
     res.redirect('/products')
-    }
-    catch (e) {
-        next(e)
-    }
-} );
+    }));
 
 app.use((err,req,res,next) => {
     const { status = 500, message = 'Error Occured'} = err;
