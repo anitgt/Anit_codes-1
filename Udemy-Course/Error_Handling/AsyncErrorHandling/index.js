@@ -4,6 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override')
 const Product = require('./models/product');
+const AppError = require('./AppError')
 
 main().then(() => {
     console.log('Mongo connection Open!')
@@ -39,6 +40,7 @@ app.get('/products', async(req, res) => {
 })
 
 app.get('/products/new', (req,res) => {
+    // throw new AppError('Test', 401)
     res.render('products/new', { categories })
 })
 
@@ -48,15 +50,21 @@ app.post('/products', async(req,res) => {
     res.redirect(`/products/${newProduct._id}`)
 })
 
-app.get('/products/:id', async (req, res) => {
+app.get('/products/:id', async (req, res, next) => {
     const { id } = req.params;
     const product = await Product.findById(id);
+    if(!product) {
+      return next(new AppError('No product Found with that id!', 404));
+    }
     res.render('products/show', {product})
 })
 
-app.get('/products/:id/edit', async (req,res) => {
-    const { id } = req.params 
+app.get('/products/:id/edit', async (req,res,next) => {
+    const { id } = req.params;
     const product = await Product.findById(id);
+    if(!product) {
+      return next(new AppError('No product Found with that id edit ', 404));
+    }
     res.render('products/edit', { product, categories })
 })
 
@@ -71,7 +79,12 @@ app.delete('/products/:id',async(req,res) => {
     const { id } = req.params;
     const deletedProduct = await Product.findByIdAndDelete(id);
     res.redirect('/products')
-} )
+} );
+
+app.use((err,req,res,next) => {
+    const { status = 500, message = 'Error Occured'} = err;
+    res.status(status).send(message)
+})
 
 app.listen(3000, () => {
     console.log('App is listening at port 3000')
