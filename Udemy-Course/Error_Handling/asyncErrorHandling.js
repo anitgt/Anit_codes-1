@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override')
-const Product = require('./models/product');
+const Product = require('./product');
 
 main().then(() => {
     console.log('Mongo connection Open!')
