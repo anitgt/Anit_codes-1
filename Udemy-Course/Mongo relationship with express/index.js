@@ -3,7 +3,9 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override')
+
 const Product = require('./models/product');
+const Farm = require('./models/farm')
 
 main().then(() => {
     console.log('Mongo connection Open!')
@@ -14,7 +16,7 @@ main().catch(err =>  {
 });
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/farmStand');
+  await mongoose.connect('mongodb://127.0.0.1:27017/farmStandTake2');
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
@@ -38,9 +40,28 @@ app.get('/products', async(req, res) => {
     
 })
 
+//Farm Routes
+
+app.get('/farms', async (req,res) => {
+    const farms = await Farm.find({});
+    res.render('farms/index', { farms });
+})
+
+app.get('/farms/new', (req,res) => {
+    res.render('farms/new')
+});
+
+app.post('/farms', async (req,res) => {
+    const farm = new Farm(req.body);
+    await farm.save();
+    res.redirect('/farms')
+})
+
+
+//Product Routes
 app.get('/products/new', (req,res) => {
     res.render('products/new', { categories })
-})
+});
 
 app.post('/products', async(req,res) => {
     const newProduct = new Product(req.body);
