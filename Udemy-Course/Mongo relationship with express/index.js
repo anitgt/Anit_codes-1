@@ -2,10 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const session = require('express-session')
+const flash = require('connect-flash');
 
 const Product = require('./models/product');
 const Farm = require('./models/farm')
+
+const sessionOptions = {secret: 'secret1', resave: false, saveUninitialized: false};
 
 main().then(() => {
     console.log('Mongo connection Open!')
@@ -16,7 +20,7 @@ main().catch(err =>  {
 });
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/flash demo');
+  await mongoose.connect('mongodb://127.0.0.1:27017/flash-demo');
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
@@ -25,7 +29,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended: true}))
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+
+app.use(session(sessionOptions));
+app.use(flash())
 
 const categories = ['fruit', 'vegetable', 'dairy']
 
@@ -44,7 +51,7 @@ app.get('/products', async(req, res) => {
 
 app.get('/farms', async (req,res) => {
     const farms = await Farm.find({});
-    res.render('farms/index', { farms });
+    res.render('farms/index', { farms, messages: req.flash('success')});
 })
 
 app.get('/farms/new', (req,res) => {
@@ -66,6 +73,7 @@ app.delete('/farms/:id/', async(req,res) => {
 app.post('/farms', async (req,res) => {
     const farm = new Farm(req.body);
     await farm.save();
+    req.flash('success', 'Successfully made a new form')
     res.redirect('/farms')
 });
 
