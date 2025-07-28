@@ -12,8 +12,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/auth-demo')
     console.error("MongoDB connection error:", err);
 });
 
-
-
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -27,6 +25,11 @@ app.get('/register', (req,res) => {
     res.render('register')
 });
 
+app.get('/login', (req,res) => {
+    res.render('login')
+})
+
+
 app.post('/register', async (req,res) => {
     const { password, username } = req.body;
     const hash = await bcrypt.hash(password, 12);
@@ -36,6 +39,17 @@ app.post('/register', async (req,res) => {
     });
     await user.save();
     res.redirect('/')
+});
+
+app.post('/login', async (req,res) => {
+    const { username, password } = req.body;
+    const user = await User.findOne( {username });
+    const validPassword = await bcrypt.compare(password, user.password);
+    if(validPassword) {
+        res.send(`Welcome ${username}`)
+    } else {
+        res.send('Invalid Username or password!')
+    }
 })
 
 app.get('/secret', (req,res) => {
