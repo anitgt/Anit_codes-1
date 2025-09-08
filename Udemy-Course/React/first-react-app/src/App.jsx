@@ -4,10 +4,13 @@ import Greeter from './Greeter'
 import Die from './Die'
 import ListPicker from "./ListPicker";
 import DoubleDice from './DoubleDice';
+import Heading from './Heading';
 
 function App() {
   return (
     <>
+    <Heading color='Magenta' text="Dice Game!" fontSize='20px'/>
+    <Heading color='teal' text="Dice Game!" fontSize='30px'/>
       {/* <Chicken/>
       <Chicken/>
       <Chicken/>
