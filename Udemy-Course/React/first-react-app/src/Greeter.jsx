@@ -1,4 +1,4 @@
-export default function Greeter({ person, from }) {
+export default function Greeter({ person='admin', from='anon' }) {
     return (
         <>
     <h1>hI THERE, {person}!</h1>

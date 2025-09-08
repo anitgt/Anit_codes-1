@@ -1,4 +1,4 @@
-export default function Die({ num }) {
+export default function Die({ num= 6 }) {
     const roll = Math.floor(Math.random() * num) + 1;
     return (
         <>
