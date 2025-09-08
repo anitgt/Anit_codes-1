@@ -3,6 +3,7 @@ import Chicken from './chicken'
 import Greeter from './Greeter'
 import Die from './Die'
 import ListPicker from "./ListPicker";
+import DoubleDice from './DoubleDice';
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
       <Die num={30}/>
       <Die num={40}/>
       <Die/> */}
-      <ListPicker values={[1,2,3]} />
-      <ListPicker values={["a", "b", "c"]} />
+      {/* <ListPicker values={[1,2,3]} />
+      <ListPicker values={["a", "b", "c"]} /> */}
+      <DoubleDice />
+      <DoubleDice />
+      <DoubleDice />
     </>
   )
 }
