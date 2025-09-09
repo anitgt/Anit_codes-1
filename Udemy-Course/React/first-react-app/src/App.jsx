@@ -6,12 +6,13 @@ import ListPicker from "./ListPicker";
 import DoubleDice from './DoubleDice';
 import Heading from './Heading';
 import ColorList from './ColorList';
+import Slots from './Slots'
 
 function App() {
   return (
     <>
-    <Heading color='Magenta' text="Dice Game!" fontSize='20px'/>
-    <Heading color='teal' text="Dice Game!" fontSize='30px'/>
+    {/* <Heading color='Magenta' text="Dice Game!" fontSize='20px'/>
+    <Heading color='teal' text="Dice Game!" fontSize='30px'/> */}
       {/* <Chicken/>
       <Chicken/>
       <Chicken/>
@@ -25,11 +26,13 @@ function App() {
       <Die/> */}
       {/* <ListPicker values={[1,2,3]} />
       <ListPicker values={["a", "b", "c"]} /> */}
-      <DoubleDice />
+      {/* <DoubleDice />
       <DoubleDice />
       <DoubleDice />
       <ColorList colors={["red", "brown", "black"]}/>
-      <ColorList colors={["teal", "aqua", "blue"]}/>
+      <ColorList colors={["teal", "aqua", "blue"]}/> */}
+      <Slots val1="Hello1" val2="Hi" val3="Hey"/>
+      <Slots val1="Hello" val2="Hello" val3="Hello"/>
     </>
   )
 }
