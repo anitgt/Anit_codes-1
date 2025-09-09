@@ -8,6 +8,15 @@ import Heading from './Heading';
 import ColorList from './ColorList';
 import Slots from './Slots'
 
+import ShoppingList from './ShoppingList';
+
+const data = [
+  {item: 'eggs', quantity: 12, completed: false},
+  {item: 'milk', quantity: 1, completed: true},
+  {item: 'toast', quantity: 4, completed: false},
+];
+
+
 function App() {
   return (
     <>
@@ -31,8 +40,9 @@ function App() {
       <DoubleDice />
       <ColorList colors={["red", "brown", "black"]}/>
       <ColorList colors={["teal", "aqua", "blue"]}/> */}
-      <Slots val1="Hello1" val2="Hi" val3="Hey"/>
-      <Slots val1="Hello" val2="Hello" val3="Hello"/>
+      {/* <Slots val1="Hello1" val2="Hi" val3="Hey"/>
+      <Slots val1="Hello" val2="Hello" val3="Hello"/> */}
+      <ShoppingList items = {data}/>
     </>
   )
 }
