@@ -11,9 +11,9 @@ import Slots from './Slots'
 import ShoppingList from './ShoppingList';
 
 const data = [
-  {item: 'eggs', quantity: 12, completed: false},
-  {item: 'milk', quantity: 1, completed: true},
-  {item: 'toast', quantity: 4, completed: false},
+  {id: 1, item: 'eggs', quantity: 12, completed: false},
+  {id: 2, item: 'milk', quantity: 1, completed: true},
+  {id:3, item: 'toast', quantity: 4, completed: false},
 ];
 
 
