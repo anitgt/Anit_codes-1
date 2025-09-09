@@ -8,5 +8,4 @@ return (
 )
 }
 
-
 export default ShoppingList
