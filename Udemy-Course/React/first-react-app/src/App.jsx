@@ -13,6 +13,7 @@ import ShoppingList from './ShoppingList';
 import Form from './Form';
 import ClickerE from './ClickerE';
 import Counter from './Counter';
+import Toggler from './Toggler';
 
 
 // const data = [
@@ -62,7 +63,8 @@ function App() {
       {/* <Form/> */}
       {/* <ClickerE message="Hi!" buttonText={"please click me!"}/>
       <ClickerE message="please stop clicking me!" buttonText="Do not Click"/> */}
-      <Counter />
+      {/* <Counter /> */}
+      <Toggler />
     </>
   )
 }
