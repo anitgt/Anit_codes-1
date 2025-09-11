@@ -8,7 +8,7 @@ import Heading from './Heading';
 import ColorList from './ColorList';
 import Slots from './Slots'
 import PropertyList from './PropertyList';
-
+import Clicker from './Clicker';
 import ShoppingList from './ShoppingList';
 
 // const data = [
@@ -53,7 +53,8 @@ function App() {
       {/* <Slots val1="Hello1" val2="Hi" val3="Hey"/>
       <Slots val1="Hello" val2="Hello" val3="Hello"/> */}
       {/* <ShoppingList items = {data}/> */}
-      <PropertyList array={properties}/>
+      {/* <PropertyList array={properties}/> */}
+      <Clicker />
     </>
   )
 }
