@@ -14,7 +14,7 @@ import Form from './Form';
 import ClickerE from './ClickerE';
 import Counter from './Counter';
 import Toggler from './Toggler';
-
+import ToggleCounter from './ToggleCounter';
 
 // const data = [
 //   {id: 1, item: 'eggs', quantity: 12, completed: false},
@@ -64,7 +64,8 @@ function App() {
       {/* <ClickerE message="Hi!" buttonText={"please click me!"}/>
       <ClickerE message="please stop clicking me!" buttonText="Do not Click"/> */}
       {/* <Counter /> */}
-      <Toggler />
+      {/* <Toggler /> */}
+      <ToggleCounter />
     </>
   )
 }
