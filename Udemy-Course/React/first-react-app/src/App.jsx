@@ -10,6 +10,9 @@ import Slots from './Slots'
 import PropertyList from './PropertyList';
 import Clicker from './Clicker';
 import ShoppingList from './ShoppingList';
+import Form from './Form';
+import ClickerE from './ClickerE';
+
 
 // const data = [
 //   {id: 1, item: 'eggs', quantity: 12, completed: false},
@@ -54,7 +57,10 @@ function App() {
       <Slots val1="Hello" val2="Hello" val3="Hello"/> */}
       {/* <ShoppingList items = {data}/> */}
       {/* <PropertyList array={properties}/> */}
-      <Clicker />
+      {/* <Clicker /> */}
+      {/* <Form/> */}
+      <ClickerE message="Hi!" buttonText={"please click me!"}/>
+      <ClickerE message="please stop clicking me!" buttonText="Do not Click"/>
     </>
   )
 }
