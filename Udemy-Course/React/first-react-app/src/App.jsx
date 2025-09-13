@@ -15,6 +15,9 @@ import ClickerE from './ClickerE';
 import Counter from './Counter';
 import Toggler from './Toggler';
 import ToggleCounter from './ToggleCounter';
+import ColorBoxes from './ColorBoxes';
+import ColorBoxGrid from './ColorBoxGrid';
+
 
 // const data = [
 //   {id: 1, item: 'eggs', quantity: 12, completed: false},
@@ -65,7 +68,31 @@ function App() {
       <ClickerE message="please stop clicking me!" buttonText="Do not Click"/> */}
       {/* <Counter /> */}
       {/* <Toggler /> */}
-      <ToggleCounter />
+      {/* <ToggleCounter /> */}
+      {/* <ColorBoxes colors = {[
+        "#E88AB3", // Soft Pink
+  "#3D9CF5", // Sky Blue
+  "#6CCF7E", // Fresh Green
+  "#F6D64A", // Warm Yellow
+  "#8C5A32", // Earthy Brown
+  "#392D73", // Deep Indigo
+  "#FF7F4F", // Orange Coral
+  "#7BE1E7", // Icy Cyan
+  "#9E59B2", // Royal Purple
+  "#2A2A2A"
+      ]}/> */}
+      <ColorBoxGrid colors = {[
+        "#E88AB3", // Soft Pink
+  "#3D9CF5", // Sky Blue
+  "#6CCF7E", // Fresh Green
+  "#F6D64A", // Warm Yellow
+  "#8C5A32", // Earthy Brown
+  "#392D73", // Deep Indigo
+  "#FF7F4F", // Orange Coral
+  "#7BE1E7", // Icy Cyan
+  "#9E59B2", // Royal Purple
+  "#2A2A2A"
+      ]}/>  
     </>
   )
 }
