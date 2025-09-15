@@ -2,6 +2,7 @@ import './App.css'
 import Counter from './Counter'
 import Practice from './practice'
 import ScoreKeeper from './ScoreKeeper'
+import EmojiClicker from '../public/EmojiClicker'
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
      {/* <h1>State Demo</h1> */}
       {/* <Counter /> */}
       {/* <Practice /> */}
-      <ScoreKeeper />
+      {/* <ScoreKeeper /> */}
+      <EmojiClicker/>
     </>
   )
 }
