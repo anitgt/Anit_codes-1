@@ -2,16 +2,26 @@ import { useState } from "react"
 import { v4 as uuid } from 'uuid'
 
 function EmojiClicker() {
-    const [emojis, setEmojis] = useState([{id: uuid(), emoji: "😁"}]);
+    const Emoji = ["👍", "💕", "🙌", "😊"];
+    const randomEmoji = Emoji[Math.floor(Math.random()* Emoji.length)]
+    
+    const [emojis, setEmojis] = useState([{id: uuid(), emoji: randomEmoji}]);
     const AddEmoji = () => {
         setEmojis(oldEmojis => 
-            [...oldEmojis, {id: uuid(), emoji: "😒"}]
-        )
+            [...oldEmojis, {id: uuid(), emoji: randomEmoji}]
+        );
+    };
+    const deleteEmoji = (id) => {
+        setEmojis(prevEmojis => {
+        return  prevEmojis.filter(e => e.id !== id)
+        });
     }
     return (
         <div>
             {emojis.map(e => 
-            <span key={e.id} style={{fontSize: '4rem'}}>{e.emoji}</span>
+            <span onClick={() => deleteEmoji(e.id)} key={e.id} style={{fontSize: '4rem'}}>
+                {e.emoji}
+            </span>
             )}
             <button onClick={AddEmoji}>Add emoji!</button>
         </div>
