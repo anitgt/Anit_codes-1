@@ -11,8 +11,8 @@ function allSameValue(dice) {
 function App() {
   return (
     <>
-    <LuckyN winCheck={lessThan4}/>
-    <LuckyN winCheck={allSameValue}/>
+    <LuckyN winCheck={lessThan4} title="Roll Less Than 4"/>
+    <LuckyN winCheck={allSameValue} title="Roll the same number"/>
     </>
   )
 }

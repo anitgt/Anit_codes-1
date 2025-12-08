@@ -1,10 +1,7 @@
-import "./Button.css";
+import "./Button.css"
 
-function Button({ clickFunc, label = "Click Me" }) {
-  return (
-    <button onClick={clickFunc} className="Button">
-      {label}
-    </button>
-  );
+function Button ({clickFunc}) {
+ return <button onClick={clickFunc} className="Button">Click me</button>
 }
+
 export default Button;
