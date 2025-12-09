@@ -8,8 +8,10 @@ function NewSignupForm () {
         const changedField = evt.target.name;
         const newValue = evt.target.value;
         setFormData(currData => {
-            currData[changedField] = newValue;
-            return {...currData}
+            return {
+                ...currData,
+                [changedField] : newValue,
+            }
         })
     }
 
