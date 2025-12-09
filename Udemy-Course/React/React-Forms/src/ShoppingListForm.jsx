@@ -26,6 +26,7 @@ function ShoppingListForm() {
             onChange={handleChange}
             value={formData.quantity}
             />
+            <button>Add Item</button>
         </form>
     )
 }
