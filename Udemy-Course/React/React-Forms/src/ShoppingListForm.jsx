@@ -12,12 +12,11 @@ function ShoppingListForm({ addItem }) {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('submitted');
-        addItem(formData)
+        addItem(formData);
+        setFormData({product: '', quantity: 0 });
     }
     return (
         <form onSubmit={handleSubmit}>
-            <h1>Product is: {formData.product} and quantity is:{formData.quantity}</h1>
             <label htmlFor="product">Product Name:</label>
             <input type="text" placeholder="product name" name="product"
             id="product"
