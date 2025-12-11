@@ -6,12 +6,14 @@ import AlarmIcon  from "@mui/icons-material/Alarm"
 
 import RatingDemo from './RatingDemo'
 import FormDemo from './FormDemo'
+import Navbar from './Navbar'
 
 function App() {
 
   return (
     <>
       <div>
+        <Navbar/>
         <FormDemo/>
       </div>
     </>
