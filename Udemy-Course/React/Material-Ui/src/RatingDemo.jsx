@@ -13,6 +13,6 @@ export default function RatingDemo () {
           setScore(newValue)
         }}
       />
-        
+        </div>
     )
 }
