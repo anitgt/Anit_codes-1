@@ -4,8 +4,6 @@ int main () {
 
     int x = 8 ;// store only absolute value
 
-
-
     double days = 7.5; //store including integer
     double price  = 9.99;
     double temperature = 18.8;
