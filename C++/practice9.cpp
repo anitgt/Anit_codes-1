@@ -1,33 +1,55 @@
 #include <iostream>
 
 int main() {
+    // int month;
 
-    int x = 5;
-    int y = 10;
+    // std::cout << "Enter month (1-12): ";
+    // std::cin >> month;
 
-    double price = 2.99;
+    // switch(month) {
+    //     case 1:
+    //         std::cout << "It is january";
+    //         break;
+    //     case 2: 
+    //         std::cout << "It is february";
+    //         break;
+    //     case 3: 
+    //         std::cout << "It is march";
+    //         break;
+    //     case 4: 
+    //         std::cout << "It is april";
+    //         break;
+    //     case 5:
+    //         std::cout << "It is may";
+    //         break;
+    //     case 6:
+    //         std::cout << "It is june";
+    //         break;
+    //     default:
+    //         std::cout << "Invalid operation!";
+    // }
 
-    int sum = x + y;
+    char grade;
+    std::cout << "What letter grade?";
+    std::cin >> grade;
 
-    int age = 29;
+    switch(grade) {
+        case 'A':
+            std::cout << "You did Great!";
+            break;
+        case 'B': 
+            std::cout << "You did Average";
+            break;
+        case 'C': 
+            std::cout << "You almost passed!";
+            break;
+        case 'D':
+            std::cout << "Better luck next time!";
+            break;
+        default: 
+            std::cout << "Wrong Grade!";
+    }
 
-    char grade = 'A';
-    char initial = 'B';
-    char currency = '$';
 
-    bool student = true;
-
-    std::string name = "Anit";
-
-    std::cout << x << '\n';
-    std::cout << y << '\n';
-    std::cout << sum << '\n';
-    std::cout << price << '\n';
-    std::cout << grade << '\n';
-    std::cout << student <<'\n';
-    std::cout << name << '\n';
-
-    std::cout << "Hello " << name << '\n';
-    std::cout << "You are " << age << " old" << '\n';
     return 0;
 }
