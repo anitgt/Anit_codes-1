@@ -32,11 +32,7 @@ int main() {
         std::cout << "Please enter valid unit";
     }
 
-    
-    
     std::cout << "*************** Temperature conversion ************** \n";
-
-
 
     return 0;
 }
