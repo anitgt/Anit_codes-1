@@ -1,17 +1,20 @@
 #include <iostream> 
 
-int searchArray(int numbers[] ,int myArray, int size);
+int searchArray(std::string foods[] ,std::string myFood, int size);
 
 int main() {
-    int numbers[] = {1, 2, 3, 4, 5, 6, 7, 7, 9, 10};
-    int size = sizeof(numbers)/sizeof(numbers[0]);
+    //int numbers[] = {1, 2, 3, 4, 5, 6, 7, 7, 9, 10};
+
+    std::string foods[] = {"Pizza" , "Burger", "Fries"};
+
+    int size = sizeof(foods)/sizeof(foods[0]);
     int index;
-    int myNum;
+    std::string myFood;
 
-    std::cout << "Enter number to search for: " << '\n';
-    std::cin >> myNum;
+    std::cout << "Enter food to search for: " << '\n';
+    std::getline(std::cin, myFood);
 
-    index = searchArray(numbers, myNum, size);
+    index = searchArray(foods, myFood, size);
     
     if(index != -1) {
         std::cout << "Index is :" << index; 
@@ -22,9 +25,9 @@ int main() {
     return 0;
 }
 
-int searchArray(int numbers[], int myNum, int size) {
+int searchArray(std::string food[], std::string myFood, int size) {
     for(int i = 0; i < size; i++) {
-        if(numbers[i] == myNum) {
+        if(food[i] == myFood) {
             return i;
         }
     }
