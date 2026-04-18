@@ -1,2 +1,1 @@
-std::cin.clear();
-    // fflush(stdin);
+ return true;
