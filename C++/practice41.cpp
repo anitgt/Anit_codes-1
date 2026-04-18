@@ -14,7 +14,7 @@ int main() {
 }
 
 void printInfo(string name,const int &age) {
-    age = 0;
+    //age = 0;
 
     cout << name << " You are " << age << " Years Old";
 }
