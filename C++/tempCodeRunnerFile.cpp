@@ -1,1 +1,1 @@
- return true;
+cout << &car1 << endl;
