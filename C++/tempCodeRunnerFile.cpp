@@ -1,1 +1,2 @@
-cout << &car1 << endl;
+car1.accelerate();
+    // car1.brake();
