@@ -75,14 +75,33 @@ void printPattern7(int n) {
    
         }
 
+void printPattern8(int n) {
+    //space
+    for(int i=0;i<n;i++) {
+        for(int j=0; j <i;j++) {
+            cout << " ";
+        };
+        //star
+        for(int j =0; j< 2*n-(2*i+1); j++) {
+            cout << "*";
+        };
+        //space
+        for(int j=0; j< 2*i; j++) {
+            cout << " ";
+        }
+        cout<< endl;
+        
+    }
+}
+
 int main() {
     int t;
     cout << "Enter test case no: ";
     cin >> t;
-    for(int i=0; i<t ;i++) {
+    for(int i=0; i<t;i++) {
     int n;
     cout << "Enter a input number for pattern: ";
     cin >> n;
-    printPattern7(n);
+    printPattern8(n);
     }
 }
