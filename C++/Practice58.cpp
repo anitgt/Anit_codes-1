@@ -118,6 +118,28 @@ void printPattern11(int n) {
 
     }
 }
+
+void printPattern12(int n) {
+    int initial = 2*(n-1);
+    for(int i=1; i<=n; i++) {
+        //number
+        for(int j=1; j<=i; j++) {
+            cout << j;
+        };
+
+        //space
+         for(int j=1; j<= initial; j++) {
+            cout << " ";
+        }
+        //number
+         for(int j=1; j<=i; j++) {
+            cout << j;
+        };
+        cout << endl;
+        initial = initial -2;
+    }
+}
+
 int main() {
     int t;
     cout << "Enter test case no: ";
@@ -126,6 +148,6 @@ int main() {
     int n;
     cout << "Enter a input number for pattern: ";
     cin >> n;
-    printPattern11(n);
+    printPattern12(n);
     }
 }
