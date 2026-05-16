@@ -94,6 +94,16 @@ void printPattern8(int n) {
     }
 }
 
+void printPattern10(int n) {
+    for(int i=0; i <=2*n-1; i++) {
+        int stars = i;
+        if(i>n) stars = 2*n-i;
+        for(int j=0; j<=stars; j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+}
 int main() {
     int t;
     cout << "Enter test case no: ";
@@ -102,7 +112,6 @@ int main() {
     int n;
     cout << "Enter a input number for pattern: ";
     cin >> n;
-    printPattern7(n);
-    printPattern8(n);
+    printPattern10(n);
     }
 }
