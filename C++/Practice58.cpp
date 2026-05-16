@@ -102,6 +102,7 @@ int main() {
     int n;
     cout << "Enter a input number for pattern: ";
     cin >> n;
+    printPattern7(n);
     printPattern8(n);
     }
 }
