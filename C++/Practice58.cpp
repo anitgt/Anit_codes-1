@@ -140,6 +140,17 @@ void printPattern12(int n) {
     }
 }
 
+void printPattern13(int n){
+    int number = 1;
+    for(int i= 1; i<=n; i++) {
+        for(int j=1; j<=i; j++) {
+            cout << number << " ";
+            number++;
+        }
+            cout << endl;
+        }
+}
+
 int main() {
     int t;
     cout << "Enter test case no: ";
@@ -148,6 +159,6 @@ int main() {
     int n;
     cout << "Enter a input number for pattern: ";
     cin >> n;
-    printPattern12(n);
+    printPattern13(n);
     }
 }
