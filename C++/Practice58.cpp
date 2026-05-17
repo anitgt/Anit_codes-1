@@ -205,6 +205,15 @@ void printPattern17(int n) {
 }
 }
 
+void printPattern18(int n) {
+    for(int i =0; i<n; i++) {
+        for(char ch = 'E'-i; ch <= 'E'; ch++) {
+            cout << ch << " ";
+        };
+        cout << endl;
+    }
+}
+
 int main() {
     int t;
     cout << "Enter test case no: ";
@@ -213,6 +222,6 @@ int main() {
     int n;
     cout << "Enter a input number for pattern: ";
     cin >> n;
-    printPattern17(n);
+    printPattern18(n);
     }
 }
