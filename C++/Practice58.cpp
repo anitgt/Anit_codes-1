@@ -214,6 +214,46 @@ void printPattern18(int n) {
     }
 }
 
+void printPattern19(int n) {
+    int num=0;
+    for(int i=0; i<n; i++) {
+        //stars
+        for(int j= 1; j<= n-i; j++){
+            cout << "*";
+        }
+        //spaces 
+        for(int j=0; j< num; j++) {
+            cout << " ";
+        }
+        //stars
+         for(int j= 1; j<= n-i; j++){
+            cout << "*";
+        }
+        num = num + 2;
+        cout << endl;
+    }
+
+           int num1 = 8;
+        for(int i =1; i<=n; i++) {
+
+        //stars 
+            for(int j=1; j<=i; j++){
+                cout << "*";
+            }
+
+        //spaces
+        for(int j=1; j< num1; j++) {
+            cout << " ";
+        }
+        //stars
+        for(int j=1; j<=i; j++){
+                cout << "*";
+            }
+            cout<< endl;
+            num1 -= 2;
+        }
+}
+
 int main() {
     int t;
     cout << "Enter test case no: ";
@@ -222,6 +262,6 @@ int main() {
     int n;
     cout << "Enter a input number for pattern: ";
     cin >> n;
-    printPattern18(n);
+    printPattern19(n);
     }
 }
